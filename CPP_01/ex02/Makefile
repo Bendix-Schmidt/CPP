@@ -6,7 +6,7 @@
 #    By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/02 13:59:37 by bschmidt          #+#    #+#              #
-#    Updated: 2024/10/29 14:41:15 by bschmidt         ###   ########.fr        #
+#    Updated: 2024/10/29 18:28:45 by bschmidt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,13 +19,10 @@ OBJ_DIR = obj
 SRC_DIR = src
 
 # EXECUTABLE NAME
-NAME		=	 braiiiiiiinnnzzzZ
+NAME		=	 adress
 
 # SOURCE FILES
 SRCS		=	main.cpp \
-				new_Zombie.cpp \
-				randomChump.cpp \
-				Zombie.cpp \
 				
 # OBJECT FILES
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.cpp=.o))

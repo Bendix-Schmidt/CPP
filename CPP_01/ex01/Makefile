@@ -19,13 +19,12 @@ OBJ_DIR = obj
 SRC_DIR = src
 
 # EXECUTABLE NAME
-NAME		=	 braiiiiiiinnnzzzZ
+NAME		=	 horde
 
 # SOURCE FILES
 SRCS		=	main.cpp \
-				new_Zombie.cpp \
-				randomChump.cpp \
 				Zombie.cpp \
+				zombieHorde.cpp \
 				
 # OBJECT FILES
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.cpp=.o))
