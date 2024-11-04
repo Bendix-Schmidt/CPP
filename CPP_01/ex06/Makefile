@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/10/02 13:59:37 by bschmidt          #+#    #+#              #
-#    Updated: 2024/10/29 18:28:45 by bschmidt         ###   ########.fr        #
+#    Created: 2024/11/04 17:53:52 by bschmidt          #+#    #+#              #
+#    Updated: 2024/11/04 17:56:39 by bschmidt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,19 +19,20 @@ OBJ_DIR = obj
 SRC_DIR = src
 
 # EXECUTABLE NAME
-NAME		=	 adress
+NAME = harlFilter
 
 # SOURCE FILES
-SRCS		=	main.cpp \
-				
+SRCS =	main.cpp \
+		Harl.cpp
+
 # OBJECT FILES
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.cpp=.o))
 
 # COMPILER
-CC			=	c++
+CC = c++
 
 # COMPILATION FLAGS
-CFLAGS		=	-Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # COMMANDS
 RM = rm -f

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/04 15:58:04 by bschmidt          #+#    #+#             */
+/*   Updated: 2024/11/04 17:28:04 by bschmidt         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -12,7 +24,7 @@ int    copy_and_replace(std::string& filename, std::string& str1, std::string& s
     }
 
     std::string     outfile_name = filename + ".replace";
-    std::ofstream   outFile(outfile_name);
+    std::ofstream   outFile(outfile_name.c_str());
     if (!outFile)
     {
         std::cerr << "Error: Could not create the output-file." << std::endl;

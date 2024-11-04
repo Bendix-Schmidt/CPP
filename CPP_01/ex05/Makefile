@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/11/04 17:54:13 by bschmidt          #+#    #+#              #
-#    Updated: 2024/11/04 17:54:14 by bschmidt         ###   ########.fr        #
+#    Created: 2024/11/04 17:53:52 by bschmidt          #+#    #+#              #
+#    Updated: 2024/11/04 17:55:02 by bschmidt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,10 +19,11 @@ OBJ_DIR = obj
 SRC_DIR = src
 
 # EXECUTABLE NAME
-NAME = sedIsForLosers
+NAME = harl2.0
 
 # SOURCE FILES
-SRCS =	main.cpp
+SRCS =	main.cpp \
+		Harl.cpp
 
 # OBJECT FILES
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.cpp=.o))

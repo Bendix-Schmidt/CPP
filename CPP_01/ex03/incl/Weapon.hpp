@@ -6,12 +6,12 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 18:21:18 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/10/30 18:24:55 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/04 17:48:56 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VIOLENCE_HPP
-#define VIOLENCE_HPP
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
 #include <iostream>
 #include <string>
@@ -29,4 +29,4 @@ class	Weapon
 		void	setType(const std::string& type);
 };
 
-#endif // VIOLENCE_HPP
+#endif // WEAPON_HPP
