@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 19:22:49 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/06 19:37:59 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/06 19:44:59 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,36 +15,30 @@
 //Default Constructor
 Fixed::Fixed()
 {
-	std::cout << "Default constructor called" << std::endl;
 	fp_nb_val = 0;
 }
 
 //Copy Constructor
 Fixed::Fixed(const Fixed &original)
 {
-	std::cout << "Copy Constructor called" << std::endl;
 	*this = original;
 }
 
 //int constructor
 Fixed::Fixed(const int x)
 {
-	std::cout << "Int Constructor called" << std::endl;
 	fp_nb_val = x << bits;
 }
 
 //float constructor
 Fixed::Fixed(const float x)
 {
-	std::cout << "Float Constructor called" << std::endl;
 	fp_nb_val = roundf(x * (1 << bits));
 }
 
 //Assignment operator
 Fixed	&Fixed::operator=(const Fixed& original)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
-	
 	if (this != &original)
         fp_nb_val = original.getRawBits();
 	return (*this);
@@ -53,22 +47,22 @@ Fixed	&Fixed::operator=(const Fixed& original)
 //Arithmetic Operators (the "this->" is optional, but easier to understand):
 Fixed Fixed::operator+(const Fixed &second) const
 {
-	return (Fixed(this->toFloat()) + second.toFloat());
+	return (Fixed(this->toFloat() + second.toFloat()));
 }
 
 Fixed Fixed::operator-(const Fixed &second) const
 {
-	return (Fixed(this->toFloat()) - second.toFloat());
+	return (Fixed(this->toFloat() - second.toFloat()));
 }
 
 Fixed Fixed::operator*(const Fixed &second) const
 {
-	return (Fixed(this->toFloat()) * second.toFloat()); 
+	return (Fixed(this->toFloat() * second.toFloat())); 
 }
 
 Fixed Fixed::operator/(const Fixed &second) const
 {
-	return (Fixed(this->toFloat()) / second.toFloat()); 
+	return (Fixed(this->toFloat() / second.toFloat())); 
 }
 
 //Increment and Decrement operators (int in brackets means its post-increment/decrement):
@@ -133,13 +127,6 @@ Fixed& Fixed::max(const Fixed &first, const Fixed &second)
         return ((Fixed&)second);
 }
 
-
-
-
-
-
-
-
 //convert to float Function
 float	Fixed::toFloat(void) const
 {
@@ -155,7 +142,6 @@ int		Fixed::toInt(void) const
 //get bit-value function
 int		Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (fp_nb_val);
 }
 
@@ -168,7 +154,6 @@ void	Fixed::setRawBits(int const raw)
 //default deconstructor
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called" << std::endl;
 }
 
 //outstream << operator overload
