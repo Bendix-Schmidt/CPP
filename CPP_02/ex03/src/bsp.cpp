@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 16:45:59 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/11 18:58:18 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/19 15:57:19 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,10 @@ bool	bsp(Point const a, Point const b, Point const c, Point const point)
 	Fixed	part_triangle2 = get_triangle(a, c, point);
 	Fixed	part_triangle3 = get_triangle(b, c, point);
 
-		
+	if (part_triangle1 == 0 || part_triangle1 == 0 || part_triangle3 == 0)
+		return (false);
+	else if ((part_triangle1 + part_triangle2 + part_triangle3) == whole_triangle)
+		return (true);
+	else
+		return (false);
 }
