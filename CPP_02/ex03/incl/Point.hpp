@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 15:48:48 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/11 18:55:11 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/19 16:53:37 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ class Point
 };
 
 bool 			bsp(Point const a, Point const b, Point const c, Point const point);
+bool 			bsp2(Point const point);
 std::ostream 	&operator<<(std::ostream &o, Point const &i);
 
 #endif // POINT_HPP

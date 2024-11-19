@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 19:22:49 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/06 19:44:59 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/19 17:30:03 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,14 @@ Fixed::Fixed(const int x)
 }
 
 //float constructor
+/* Fixed::Fixed(const float x)
+{
+	fp_nb_val = roundf(x * ((float)1 << bits));
+} */
 Fixed::Fixed(const float x)
 {
-	fp_nb_val = roundf(x * (1 << bits));
+    this->fp_nb_val = roundf(x * (float)(1 << this->bits));
+    std::cout << "Constructing Fixed from float: " << x << " -> " << fp_nb_val << std::endl;
 }
 
 //Assignment operator
@@ -127,10 +132,47 @@ Fixed& Fixed::max(const Fixed &first, const Fixed &second)
         return ((Fixed&)second);
 }
 
+//Comparisons
+bool	Fixed::operator>(const Fixed &rhs) const
+{
+	return (this->fp_nb_val > rhs.fp_nb_val);
+}
+
+bool	Fixed::operator<(const Fixed &rhs) const
+{
+	return (this->fp_nb_val < rhs.fp_nb_val);
+}
+
+bool	Fixed::operator>=(const Fixed &rhs) const
+{
+	return (this->fp_nb_val >= rhs.fp_nb_val);
+}
+
+bool	Fixed::operator<=(const Fixed &rhs) const
+{
+	return (this->fp_nb_val <= rhs.fp_nb_val);
+}
+
+bool	Fixed::operator==(const Fixed &rhs) const
+{
+	return (this->fp_nb_val == rhs.fp_nb_val);
+}
+
+bool	Fixed::operator!=(const Fixed &rhs) const
+{
+	return (this->fp_nb_val != rhs.fp_nb_val);
+}
+
 //convert to float Function
-float	Fixed::toFloat(void) const
+/* float	Fixed::toFloat(void) const
 {
 	return (static_cast<float>( this->getRawBits() ) / ( 1 << this->bits ));
+} */
+float Fixed::toFloat(void) const
+{
+    float result = static_cast<float>(fp_nb_val) / (1 << bits);
+    std::cout << "Converting to float: " << fp_nb_val << " -> " << result << std::endl;
+    return result;
 }
 
 //convert to int function

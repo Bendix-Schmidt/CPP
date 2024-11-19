@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 19:23:15 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/06 19:36:13 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/19 15:59:21 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FIXED_HPP
 
 #include <iostream>
+#include <cstdio>
 #include <cmath>
 
 class	Fixed
