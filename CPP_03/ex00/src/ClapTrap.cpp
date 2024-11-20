@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 17:33:17 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/19 19:42:12 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/20 15:38:19 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,14 @@ void	ClapTrap::takeDamage(unsigned int amount)
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
+	if (HP <= 0 && EP <= 0)
+	{
+		std::cout << name << " would like to repair itself, but neither has HP or EP left" << std::endl;
+		return ;
+	}
 	if (HP <= 0)
 	{
-		std::cout << name << " would like to repair itself, but does not have any HP left" << std::endl;
+		std::cout << name << " would like to repair itself, but has no HP left" << std::endl;
 		return ;
 	}
 	if (EP <= 0)
@@ -117,18 +122,30 @@ ClapTrap::ClapTrap(const ClapTrap& other)
 //copy assignment Operator
 ClapTrap &ClapTrap::operator=(const ClapTrap& other)
 {
-	this->name = other.get_name();
-	this->HP = other.get_HP();
-	this->EP = other.get_EP();
-	this->AD = other.get_AD();
+	if (this != &other)
+	{
+		this->name = other.get_name();
+		this->HP = other.get_HP();
+		this->EP = other.get_EP();
+		this->AD = other.get_AD();
+		return (*this);
+		//alternative logic that would also work, 
+		//because member functions have access to private members:
+	 	this->name = other.name;
+            this->HP = other.HP;
+            this->EP = other.EP;
+            this->AD = other.AD;
+	}
 	return (*this);
 }
 
+
+
 std::ostream	&operator<<(std::ostream &stream, ClapTrap const &clapTrap)
 {
-	stream << "hitPoints: " << clapTrap.get_HP()
-			  << ", energyPoints: " << clapTrap.get_EP()
-			  << ", attackDamage: " << clapTrap.get_AD() << std::endl;
+	stream << "HP: " << clapTrap.get_HP() << "\n"
+			  << "EP: " << clapTrap.get_EP() << "\n"
+			  << "AD: " << clapTrap.get_AD() << std::endl;
 	return (stream);
 }
 

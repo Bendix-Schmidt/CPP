@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 17:33:45 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/19 19:25:10 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/20 15:33:43 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,7 @@ class ClapTrap
 		//standard deconstrucor
 		~ClapTrap();
 };
+
+std::ostream	&operator<<(std::ostream &stream, ClapTrap const &clapTrap);
 
 #endif // CLAPPTRAPP_HPP

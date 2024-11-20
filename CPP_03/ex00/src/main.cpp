@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 17:33:38 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/19 18:51:35 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/20 15:36:50 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,14 @@ int	main(void)
 {
 	ClapTrap Clap1("MeanClap");
 
-	Clap1.attack("Bob");
-	Clap1.takeDamage(11);
-	Clap1.beRepaired(1);
+	int x = 0;
+	
+	while (x < 16)
+	{
+		Clap1.attack("Bob");
+		Clap1.takeDamage(1);
+		Clap1.beRepaired(1);
+		std::cout << Clap1;
+		x++;
+	}
 }
