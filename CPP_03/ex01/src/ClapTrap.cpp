@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 17:33:17 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/20 15:38:19 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/20 17:28:06 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,10 +131,10 @@ ClapTrap &ClapTrap::operator=(const ClapTrap& other)
 		return (*this);
 		//alternative logic that would also work, 
 		//because member functions have access to private members:
-	 	this->name = other.name;
+	 	/* this->name = other.name;
             this->HP = other.HP;
             this->EP = other.EP;
-            this->AD = other.AD;
+            this->AD = other.AD; */
 	}
 	return (*this);
 }

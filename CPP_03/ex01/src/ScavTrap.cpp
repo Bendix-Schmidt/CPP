@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 15:44:58 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/20 17:08:42 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/20 17:36:27 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,6 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 //standard destructor
 ScavTrap::~ScavTrap()
 {
-	std::cout << this->get_name() << " died" << std::endl;
+       std::cout << this->get_name() << " died" << std::endl;
 }
 

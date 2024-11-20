@@ -6,7 +6,7 @@
 #    By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/04 19:22:28 by bschmidt          #+#    #+#              #
-#    Updated: 2024/11/19 17:33:05 by bschmidt         ###   ########.fr        #
+#    Updated: 2024/11/20 17:21:54 by bschmidt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ OBJ_DIR = obj
 SRC_DIR = src
 
 # EXECUTABLE NAME
-NAME = clapTrack
+NAME = clapTrap
 
 # SOURCE FILES
 SRCS =	main.cpp \

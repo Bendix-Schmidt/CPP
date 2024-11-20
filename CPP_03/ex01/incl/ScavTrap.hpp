@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 15:43:32 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/20 17:05:24 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/20 17:21:20 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class ScavTrap : public ClapTrap
 	public:
 		//individual member functions (exceeding or overriding ClapTrap class):
 		void guardGate();
-		void attack(const std::string& target) override;
+		void attack(const std::string& target);
 		
 		//standard constructor
 		ScavTrap(std::string name);
@@ -35,7 +35,7 @@ class ScavTrap : public ClapTrap
    		ScavTrap& operator=(const ScavTrap& other);
 		
 		//individual overriding destructor
-		~ScavTrap() override;
+		~ScavTrap();
 		
 };
 
