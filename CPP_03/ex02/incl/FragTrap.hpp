@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/19 17:33:38 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/20 18:13:15 by bschmidt         ###   ########.fr       */
+/*   Created: 2024/11/20 17:55:05 by bschmidt          #+#    #+#             */
+/*   Updated: 2024/11/20 18:02:04 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
+
 #include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include <iostream>
 
-int	main(void)
+class FragTrap : public ClapTrap
 {
-	ClapTrap Clap1("MeanClap");
-	ScavTrap Scav1("ReallyMeanClap");
-	FragTrap Frag1("EvenMeanerClap");
+	private:
 
-	Clap1.attack("Bob");
-	//Clap1.takeDamage(1);
-	//Clap1.beRepaired(1);
-	//std::cout << Clap1;
-	Scav1.attack("Bobby");
-	ScavTrap Scav2 = Scav1;
-	Scav2.attack("Charly");
-	Frag1.attack("Someone");
-}
+	public:
+	//individual member function 
+	void highFivesGuys(void);
+
+	//standard constructor
+	FragTrap(std::string name);
+	// Copy constructor
+	FragTrap(const FragTrap& other);
+	// Copy assignment operator
+   	FragTrap& operator=(const FragTrap& other);
+	//destructor
+	~FragTrap();
+};
+
+#endif //FRAGTRAP_HPP

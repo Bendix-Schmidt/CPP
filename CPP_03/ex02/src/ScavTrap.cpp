@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 15:44:58 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/20 17:08:42 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/20 18:11:10 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,13 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	set_AD(20);
 }
 
-// Copy constructor
+//copy constructor
 ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)
 {
     std::cout << "ScavTrap copy constructor called for " << other.get_name() << std::endl;
 }
 
-// Copy assignment operator
+//copy assignment operator
 ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 {
     if (this != &other) {
@@ -63,6 +63,6 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 //standard destructor
 ScavTrap::~ScavTrap()
 {
-	std::cout << this->get_name() << " died" << std::endl;
+       std::cout << this->get_name() << " the Scavtrap died" << std::endl;
 }
 

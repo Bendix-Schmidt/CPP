@@ -6,7 +6,7 @@
 #    By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/04 19:22:28 by bschmidt          #+#    #+#              #
-#    Updated: 2024/11/20 15:45:14 by bschmidt         ###   ########.fr        #
+#    Updated: 2024/11/20 18:14:46 by bschmidt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,12 +19,13 @@ OBJ_DIR = obj
 SRC_DIR = src
 
 # EXECUTABLE NAME
-NAME = clapTrack
+NAME = FragTrap
 
 # SOURCE FILES
 SRCS =	main.cpp \
 		ClapTrap.cpp \
 		ScavTrap.cpp \
+		FragTrap.cpp \
 
 # OBJECT FILES
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.cpp=.o))
