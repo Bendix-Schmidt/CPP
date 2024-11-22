@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 20:03:45 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/20 20:15:39 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/22 14:04:51 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ class Animal
 	
 	public:
 		//member functions
-		virtual void	makeSound();
+		virtual void	makeSound() const;
 	
 		//getter
-		std::string	get_type();
+		std::string	get_type() const;
 
 		//setter
-		void	set_type();
+		void	set_type(std::string type);
 
 		//standard constructor
 		Animal();

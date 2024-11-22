@@ -6,7 +6,7 @@
 #    By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/04 19:22:28 by bschmidt          #+#    #+#              #
-#    Updated: 2024/11/20 20:04:35 by bschmidt         ###   ########.fr        #
+#    Updated: 2024/11/22 17:05:47 by bschmidt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,11 +19,15 @@ OBJ_DIR = obj
 SRC_DIR = src
 
 # EXECUTABLE NAME
-NAME = clapTrap
+NAME = animals
 
 # SOURCE FILES
 SRCS =	main.cpp \
-		animals.cpp \
+		Animal.cpp \
+		Cat.cpp \
+		Dog.cpp \
+		WrongAnimal.cpp \
+		WrongCat.cpp \
 
 # OBJECT FILES
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.cpp=.o))

@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 20:18:24 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/20 20:19:02 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/22 14:09:07 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 # define DOG_HPP
 
 #include "Animal.hpp"
+#include <iostream>
 
 class Dog : public Animal
 {
 	public:
 		//individual member function
-		void makeSound();
+		void makeSound() const;
 
 		//standard constructor
 		Dog();

@@ -1,35 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/20 20:13:05 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/22 14:08:59 by bschmidt         ###   ########.fr       */
+/*   Created: 2024/11/20 20:03:45 by bschmidt          #+#    #+#             */
+/*   Updated: 2024/11/22 15:00:27 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
-#include "Animal.hpp"
 #include <iostream>
 
-class Cat : public Animal
+class WrongAnimal
 {
+	protected:
+		std::string type;
+	
 	public:
-		//individual member function
-		void makeSound() const;
+		//member functions
+		void	makeSound() const;
+	
+		//getter
+		std::string	get_type() const;
+
+		//setter
+		void	set_type(std::string type);
 
 		//standard constructor
-		Cat();
+		WrongAnimal();
 		//copy constructor
-		Cat(const Cat &other);
-		//copy assignment operator
-		Cat& operator=(const Cat &other);
+		WrongAnimal(const WrongAnimal &other);
+		//copy assignemnt operator
+		WrongAnimal& operator=(const WrongAnimal &other);
 		//standard destructor
-		~Cat();
+		~WrongAnimal();
 };
 
-#endif // CAT_HPP
+
+#endif // WRONGANIMAL_HPP

@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 20:13:05 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/22 14:08:59 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/22 15:03:33 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 #include <iostream>
 
-class Cat : public Animal
+class WrongCat : public WrongAnimal
 {
 	public:
 		//individual member function
 		void makeSound() const;
 
 		//standard constructor
-		Cat();
+		WrongCat();
 		//copy constructor
-		Cat(const Cat &other);
+		WrongCat(const WrongCat &other);
 		//copy assignment operator
-		Cat& operator=(const Cat &other);
+		WrongCat& operator=(const WrongCat &other);
 		//standard destructor
-		~Cat();
+		~WrongCat();
 };
 
-#endif // CAT_HPP
+#endif // WRONGCAT_HPP
