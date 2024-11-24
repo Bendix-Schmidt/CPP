@@ -6,7 +6,7 @@
 #    By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/04 19:22:28 by bschmidt          #+#    #+#              #
-#    Updated: 2024/11/22 17:05:47 by bschmidt         ###   ########.fr        #
+#    Updated: 2024/11/24 20:24:44 by bschmidt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRCS =	main.cpp \
 		Animal.cpp \
 		Cat.cpp \
 		Dog.cpp \
+		Brain.cpp \
 		WrongAnimal.cpp \
 		WrongCat.cpp \
 

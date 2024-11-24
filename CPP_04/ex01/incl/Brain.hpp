@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 17:52:45 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/24 17:20:15 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/24 20:28:10 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,18 @@ class Brain
 		
 		//setter
 		void		set_idea(int i, std::string idea);
-		
+		void		set_ideas(std::string idea);
+
 		//printers
 		void 		print_first_idea(std::ostream &stream) const;
 		void		print_specific_idea(std::ostream &stream, int index) const;
 		void		print_all_ideas(std::ostream &stream) const;
-};
 
-std::ostream	&operator<<(std::ostream &stream, Brain const &brain);
+		//constructors and deconstructor
+		Brain();
+		~Brain();
+		Brain(const Brain &original);
+		Brain& operator=(const Brain &original);
+};
 
 #endif // BRAIN_HPP

@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 17:56:22 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/24 17:26:26 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/24 20:41:18 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,23 @@
 
 //member functions:
 //getter
-std::string	Brain::get_idea(int i) const
+std::string	Brain::get_idea(int index) const
 {
-	return (this->ideas[i]);
+	if (ideas[index].empty())
+		return ("There is no idea at the requested index.");
+	else
+		return (this->ideas[index]);
 }
 
 //setter
+void	Brain::set_ideas(std::string idea)
+{
+	for (int i = 0; i<100; i++)
+	{
+		ideas[i] = idea;
+	}
+}
+
 void	Brain::set_idea(int i, std::string idea)
 {
 	this->ideas[i] = idea;
@@ -29,7 +40,7 @@ void	Brain::set_idea(int i, std::string idea)
 void	Brain::print_first_idea(std::ostream &stream) const
 {
 	if (ideas[0].empty())
-		stream << "Idea[0] does not exist" << std::endl;
+		stream << "Idea[0] does not exist." << std::endl;
 	else
 		stream << ideas[0] << std::endl;
 }
@@ -64,7 +75,7 @@ void	Brain::print_all_ideas(std::ostream &stream) const
 Brain::Brain()
 {
 	std::cout << "Brain default constructor called" << std::endl;
-};
+}
 
 //copy constructor
 Brain::Brain(const Brain &original)
@@ -82,19 +93,12 @@ Brain	&Brain::operator=(const Brain &original)
 		{
             this->ideas[i] = original.ideas[i];
     	}
-    return *this;
 	}
+	return *this;
 }
 
 //standard destructor
 Brain::~Brain()
 {
 	std::cout << "Brain destructor called" << std::endl;
-}
-
-//overloads
-std::ostream	&operator<<(std::ostream &stream, Brain const &brain)
-{
-	stream << brain.get_idea(0) << std::endl;
-	return (stream);
 }

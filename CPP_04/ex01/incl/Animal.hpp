@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 20:03:45 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/22 14:04:51 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/24 19:17:20 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Animal
 	public:
 		//member functions
 		virtual void	makeSound() const;
-	
+
 		//getter
 		std::string	get_type() const;
 
@@ -39,6 +39,5 @@ class Animal
 		//standard destructor
 		virtual ~Animal();
 };
-
 
 #endif // ANIMAL_HPP
