@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 16:44:54 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/19 15:35:26 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/12/09 13:22:57 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 Point::Point() : x(Fixed(0)), y(Fixed(0))
 {}
 
-Point::Point(const float x_value, const float y_value) : x(Fixed(x_value)), y(Fixed(y_value))
+Point::Point(const Point &point) : x(point.x), y(point.y)
 {}
 
-Point::Point(const Point &original)
-{
-	*this = original;
-}
+Point::Point(float x, float y) : x(x), y(y)
+{}
 
 Point	&Point::operator=(const Point &original)
 {
@@ -42,6 +40,11 @@ Fixed	Point::get_x(void) const
 Fixed	Point::get_y(void) const
 {
 	return(this->y);
+}
+
+std::ostream & operator<<( std::ostream & stream, Point const &fixed ) {
+	stream << "x: " << fixed.get_x() << " y: " << fixed.get_y();
+	return (stream);
 }
 
 Point::~Point()

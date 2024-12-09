@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 19:22:49 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/19 17:30:03 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/12/09 13:26:38 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ Fixed::Fixed(const int x)
 Fixed::Fixed(const float x)
 {
     this->fp_nb_val = roundf(x * (float)(1 << this->bits));
-    std::cout << "Constructing Fixed from float: " << x << " -> " << fp_nb_val << std::endl;
+    //std::cout << "Constructing Fixed from float: " << x << " -> " << fp_nb_val << std::endl;
 }
 
 //Assignment operator
@@ -171,7 +171,7 @@ bool	Fixed::operator!=(const Fixed &rhs) const
 float Fixed::toFloat(void) const
 {
     float result = static_cast<float>(fp_nb_val) / (1 << bits);
-    std::cout << "Converting to float: " << fp_nb_val << " -> " << result << std::endl;
+    //std::cout << "Converting to float: " << fp_nb_val << " -> " << result << std::endl;
     return result;
 }
 

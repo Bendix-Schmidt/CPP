@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 18:20:49 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/10/29 14:29:28 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/26 10:26:55 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int	main(void)
 {
 	Zombie *heap_Zombie = newZombie("HeapZombie");
-
 	heap_Zombie->announce();
 	delete(heap_Zombie);
 

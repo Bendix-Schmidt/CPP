@@ -6,42 +6,44 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 19:22:39 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/19 17:30:13 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/12/09 13:29:07 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
 #include "Fixed.hpp"
 #include "Point.hpp"
-#include <iostream>
 
-int main(void)
+int	main(void)
 {
-	Point	point3(1.5f, 0.4f);
+	Point	a(3.0f, 2.0f);
+	Point	b(7.0f, 14.0f);
+	Point	c(10.0f, 5.0f);
 
-	if (bsp2(point3))
-		return (0);
-	return (0);
+	std::cout << "Trianlge:" << std::endl
+			  <<  "A: " << a << std::endl
+			  <<  "B: " << b << std::endl
+			  <<  "C: " << c << std::endl << std::endl;
+
+	{
+		Point	point1(5, 5);
+		if (bsp(a, b, c, point1))
+			std::cout << point1 << " lies in triangle" << std::endl;
+		else 
+			std::cout << point1 << " does not lie in triangle" << std::endl;
+	}
+	{
+		Point	point2(17.0f, 6.5f);
+		if (bsp(a, b, c, point2))
+			std::cout << point2 << " lies in triangle" << std::endl;
+		else 
+			std::cout << point2 << " does not lie in triangle" << std::endl;
+	}
+	{
+		Point	point3(7.5f, 5.5f);
+		if (bsp(a, b, c, point3))
+			std::cout << point3 << " lies in triangle" << std::endl;
+		else 
+			std::cout << point3 << " does not lie in triangle" << std::endl;
+	}
 }
-
-/* int main(void)
-{
-	Point	a(0.0f, 0.0f);
-	Point	b(3.0f, 0.0f);
-	Point	c(1.5f, 3.0f);
-	Point	point1(2.0f, 2.0f);
-	Point	point2(2.4f, 4.0f);
-	Point	point3(1.5f, 0.4f);
-	
-	if (bsp(a,b,c, point1))
-		printf("The point lies inside the triangle.\n");
-	else
-		printf("The point lies outside the triangle.\n"); 
-	if (bsp(a,b,c, point2))
-		printf("The point lies inside the triangle.\n");
-	else
-		printf("The point lies outside the triangle.\n");
-	if (bsp(a,b,c, point3))
-		printf("The point lies inside the triangle.\n");
-	else
-		printf("The point lies outside the triangle.\n");
-} */

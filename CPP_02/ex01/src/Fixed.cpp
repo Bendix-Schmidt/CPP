@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 19:22:49 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/06 14:29:42 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/12/07 18:57:02 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ Fixed	&Fixed::operator=(const Fixed& original)
 
 int		Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (fp_nb_val);
 }
 
