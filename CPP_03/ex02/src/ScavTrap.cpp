@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 15:44:58 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/20 18:11:10 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/01/09 12:34:33 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,17 @@ void	ScavTrap::guardGate()
 }
 
 //standard constructor
+ScavTrap::ScavTrap() : ClapTrap()
+{
+	std::cout << name << " was born as a ScavTrap" << std::endl;
+	set_HP(100);
+	set_EP(50);
+	set_AD(20);
+}
+
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << name << " was born as a ScavTrap" << std::endl;
-	set_name(name);
 	set_HP(100);
 	set_EP(50);
 	set_AD(20);

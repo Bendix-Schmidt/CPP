@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 15:44:58 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/12/17 17:37:58 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/01/09 13:10:49 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,21 @@ void	ScavTrap::attack(const std::string& target)
 {
 	if (get_EP() > 0 && get_HP() > 0)
 	{
-		std::cout << get_name() << " the Scavtrap attacks " << target << " and does " << get_AD() << " damage!" << std::endl;
+		std::cout << get_name() << " attacks " << target << " and does " << get_AD() << " damage!" << std::endl;
 		int x = get_EP() - 1;
 		set_EP(x);
 	}
 	else if (get_HP() > 0 && get_EP() == 0)
-		std::cout << get_name() << " the Scavtrap tries to attack, but does not have enough EP left!" << std::endl;
+		std::cout << get_name() << " tries to attack, but does not have enough EP left!" << std::endl;
 	else if (get_EP() > 0 && get_HP() == 0)
-		std::cout << get_name() << " the Scavtrap tries to attack, but does not have any HP left!" << std::endl;
+		std::cout << get_name() << " tries to attack, but does not have any HP left!" << std::endl;
 	else
-		std::cout << get_name() << " the Scavtrap tries to attack, but neither has EP nor HP left!" << std::endl;
+		std::cout << get_name() << " tries to attack, but neither has EP nor HP left!" << std::endl;
 }
 
 void	ScavTrap::guardGate()
 {
-	std::cout << this->get_name() << " is not in Gate Keeper mode" << std::endl;
+	std::cout << this->get_name() << " is now in Gate Keeper mode" << std::endl;
 }
 
 //standard constructor

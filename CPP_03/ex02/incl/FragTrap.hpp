@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 17:55:05 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/20 18:02:04 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/01/09 12:28:01 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class FragTrap : public ClapTrap
 	void highFivesGuys(void);
 
 	//standard constructor
+	FragTrap();
 	FragTrap(std::string name);
 	// Copy constructor
 	FragTrap(const FragTrap& other);

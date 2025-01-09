@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 17:33:38 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/12/16 16:11:08 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/01/09 12:26:42 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 int	main(void)
 {
-	ClapTrap Clap1("MeanClap");
+	ScavTrap Scav1;
+	Scav1.attack("Bobby");
+	/* ClapTrap Clap1("MeanClap");
 	ScavTrap Scav1("ReallyMeanClap");
 
 	Clap1.attack("Bob");
@@ -26,5 +28,5 @@ int	main(void)
 	Scav1.guardGate();
 	ScavTrap Scav2 = Scav1;
 	Scav2.set_name("ReallyMeanClap2");
-	Scav2.attack("Charly");
+	Scav2.attack("Charly"); */
 }

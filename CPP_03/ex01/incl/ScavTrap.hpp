@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 15:43:32 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/20 17:21:20 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/01/09 12:19:59 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class ScavTrap : public ClapTrap
 		void attack(const std::string& target);
 		
 		//standard constructor
+		ScavTrap();
 		ScavTrap(std::string name);
 
 		  // Copy constructor

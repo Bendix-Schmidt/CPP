@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 17:33:38 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/12/17 17:32:25 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/01/09 13:23:23 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,9 @@
 #include "FragTrap.hpp"
 #include "DiamondTrap.hpp"
 
-int main() {
-    // Test ClapTrap
-    ClapTrap Clap1;
-	ScavTrap Scav1;
-	FragTrap Frag1;
-		
-	std::cout << Clap1 << std::endl;
-	std::cout << Scav1 << std::endl;
-	std::cout << Frag1 << std::endl;
-	std::cout << "\n\n" << std::endl;
-
-
-
-
+int main()
+{
+	// Test ClapTrap
 	ClapTrap clap("Clappy");
     clap.attack("target1");
     clap.takeDamage(5);
@@ -37,6 +26,7 @@ int main() {
     std::cout << "ClapTrap " << clap.get_name() << " has " << clap.get_HP() << " HP, "
               << clap.get_EP() << " EP, and " << clap.get_AD() << " AD." << std::endl;
 
+	std::cout << std::endl;
     // Test ScavTrap
     ScavTrap scav("Scavvy");
     scav.attack("target2");
@@ -45,6 +35,7 @@ int main() {
     std::cout << "ScavTrap " << scav.get_name() << " has " << scav.get_HP() << " HP, "
               << scav.get_EP() << " EP, and " << scav.get_AD() << " AD." << std::endl;
 
+	std::cout << std::endl;
     // Test FragTrap
     FragTrap frag("Fraggy");
     frag.attack("target3");
@@ -53,6 +44,7 @@ int main() {
     std::cout << "FragTrap " << frag.get_name() << " has " << frag.get_HP() << " HP, "
               << frag.get_EP() << " EP, and " << frag.get_AD() << " AD." << std::endl;
 
+	std::cout << std::endl;
     // Test DiamondTrap
     DiamondTrap diamond("Diamondy");
     diamond.attack("target4");

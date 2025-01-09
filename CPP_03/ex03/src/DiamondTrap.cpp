@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 18:17:05 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/12/17 17:38:13 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/01/09 12:48:05 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,12 @@ void DiamondTrap::whoAmI()
 }
 
 //standard constructor
-DiamondTrap::DiamondTrap() : ClapTrap()
+DiamondTrap::DiamondTrap() : ClapTrap("anonymous_Clap_Trap"), FragTrap("anonymous"), ScavTrap("anonymous"), name("anonymous")
 {
-	set_name("anonymous");
-	set_HP(100); // From FragTrap
-	set_EP(50);  // From ScavTrap
-	set_AD(30);  // From FragTrap
-	std::cout << "DiamondTrap " << name << " created." << std::endl;
+    set_HP(100); // From FragTrap
+    set_EP(50);  // From ScavTrap
+    set_AD(30);  // From FragTrap
+    std::cout << "DiamondTrap " << name << " created." << std::endl;
 }
 
 //standard constructor
