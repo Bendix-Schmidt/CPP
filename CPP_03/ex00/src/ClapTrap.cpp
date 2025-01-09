@@ -6,11 +6,11 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 17:33:17 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/20 15:38:19 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/12/17 17:04:26 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "../incl/ClapTrap.hpp"
 
 //MEMBER FUNCTIONS
 void	ClapTrap::attack(const std::string& target)
@@ -104,6 +104,15 @@ void	ClapTrap::set_AD(int amount)
 
 //Constructors & Deconstructors
 //standard constructor
+ClapTrap::ClapTrap()
+{
+	std::cout << "anonymous claptrap born" << std::endl;
+	this->name = "anonymous";
+	HP = 10;
+	EP = 10;
+	AD = 0;
+}
+
 ClapTrap::ClapTrap(std::string name)
 {
 	std::cout << name << " was born" << std::endl;
@@ -116,12 +125,14 @@ ClapTrap::ClapTrap(std::string name)
 //copy constructor
 ClapTrap::ClapTrap(const ClapTrap& other)
 {
-	*this = other; 
+	std::cout << "Copy Constructor called" << std::endl;
+	*this = other;
 }
 
 //copy assignment Operator
 ClapTrap &ClapTrap::operator=(const ClapTrap& other)
 {
+	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other)
 	{
 		this->name = other.get_name();
@@ -131,10 +142,10 @@ ClapTrap &ClapTrap::operator=(const ClapTrap& other)
 		return (*this);
 		//alternative logic that would also work, 
 		//because member functions have access to private members:
-	 	this->name = other.name;
-            this->HP = other.HP;
-            this->EP = other.EP;
-            this->AD = other.AD;
+	 	//this->name = other.name;
+        //   this->HP = other.HP;
+        //   this->EP = other.EP;
+        //   this->AD = other.AD;
 	}
 	return (*this);
 }
@@ -152,5 +163,5 @@ std::ostream	&operator<<(std::ostream &stream, ClapTrap const &clapTrap)
 //standard deconstructor
 ClapTrap::~ClapTrap()
 {
-	std::cout << name << " died" << std::endl;
+	std::cout << name << " died as a claptrap" << std::endl;
 }

@@ -6,11 +6,11 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 17:33:17 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/20 17:28:06 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/12/17 17:04:15 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "../incl/ClapTrap.hpp"
 
 //MEMBER FUNCTIONS
 void	ClapTrap::attack(const std::string& target)
@@ -104,6 +104,15 @@ void	ClapTrap::set_AD(int amount)
 
 //Constructors & Deconstructors
 //standard constructor
+ClapTrap::ClapTrap()
+{
+	std::cout << "anonymous claptrap born" << std::endl;
+	this->name = "anonymous";
+	HP = 10;
+	EP = 10;
+	AD = 0;
+}
+
 ClapTrap::ClapTrap(std::string name)
 {
 	std::cout << name << " was born" << std::endl;
@@ -116,12 +125,14 @@ ClapTrap::ClapTrap(std::string name)
 //copy constructor
 ClapTrap::ClapTrap(const ClapTrap& other)
 {
+	std::cout << "copy constructor for clap trap called" << std::endl;
 	*this = other; 
 }
 
 //copy assignment Operator
 ClapTrap &ClapTrap::operator=(const ClapTrap& other)
 {
+	std::cout << "copy assignment operator for clap trap called" << std::endl;
 	if (this != &other)
 	{
 		this->name = other.get_name();
@@ -152,5 +163,5 @@ std::ostream	&operator<<(std::ostream &stream, ClapTrap const &clapTrap)
 //standard deconstructor
 ClapTrap::~ClapTrap()
 {
-	std::cout << name << " died" << std::endl;
+	std::cout << name << " died as a claptrap" << std::endl;
 }

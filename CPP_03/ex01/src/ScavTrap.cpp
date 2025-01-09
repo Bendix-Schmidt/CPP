@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 15:44:58 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/20 17:36:27 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/12/16 16:11:48 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ScavTrap::attack(const std::string& target)
 
 void	ScavTrap::guardGate()
 {
-	std::cout << this->get_name() << " is not in Gate Keeper mode" << std::endl;
+	std::cout << this->get_name() << " is now in Gate Keeper mode" << std::endl;
 }
 
 //standard constructor
@@ -63,6 +63,6 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 //standard destructor
 ScavTrap::~ScavTrap()
 {
-       std::cout << this->get_name() << " died" << std::endl;
+       std::cout << this->get_name() << " the ScavTrap died" << std::endl;
 }
 

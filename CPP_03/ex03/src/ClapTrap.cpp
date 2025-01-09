@@ -6,11 +6,11 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 17:33:17 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/20 17:28:06 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/12/17 17:37:22 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "../incl/ClapTrap.hpp"
 
 //MEMBER FUNCTIONS
 void	ClapTrap::attack(const std::string& target)
@@ -104,7 +104,15 @@ void	ClapTrap::set_AD(int amount)
 
 //Constructors & Deconstructors
 //standard constructor
-ClapTrap::ClapTrap(std::string name)
+ClapTrap::ClapTrap() : name("anonymous")
+{
+	std::cout << "anonymous claptrap born" << std::endl;
+	HP = 10;
+	EP = 10;
+	AD = 0;
+}
+
+ClapTrap::ClapTrap(std::string name) : name(name)
 {
 	std::cout << name << " was born" << std::endl;
 	this->name = name;

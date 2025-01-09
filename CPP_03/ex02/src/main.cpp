@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 17:33:38 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/20 18:13:15 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/12/16 16:38:05 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,7 @@ int	main(void)
 	ScavTrap Scav2 = Scav1;
 	Scav2.attack("Charly");
 	Frag1.attack("Someone");
+	FragTrap Frag2 = Frag1;
+	Frag2.set_name("EvenMeanerClap2");
+	Frag2.highFivesGuys();
 }

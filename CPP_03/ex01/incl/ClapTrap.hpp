@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 17:33:45 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/20 16:13:37 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/12/17 17:02:50 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ class ClapTrap
 
 		//Constructor and Deconstructor
 		//standard constructor
+		ClapTrap();
 		ClapTrap(const std::string name);
 		
 		//copy constructor

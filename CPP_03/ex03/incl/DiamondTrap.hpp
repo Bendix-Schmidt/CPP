@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 18:17:13 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/20 19:39:53 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/12/17 17:27:06 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ public:
 	void whoAmI();
 	
 	//constructor
+	DiamondTrap();
 	DiamondTrap(std::string name);
 	
 	//copy constructor

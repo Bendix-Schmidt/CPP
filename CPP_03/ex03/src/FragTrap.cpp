@@ -6,12 +6,12 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 17:55:17 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/20 18:15:02 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/12/17 17:30:05 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
-#include "ClapTrap.hpp"
+#include "../incl/FragTrap.hpp"
+#include "../incl/ClapTrap.hpp"
 
 //member function
 void	FragTrap::highFivesGuys(void)
@@ -20,10 +20,17 @@ void	FragTrap::highFivesGuys(void)
 }
 
 //standard constrcutor
+FragTrap::FragTrap() : ClapTrap()
+{
+	std::cout << name << " was born as a FragTrap!" << std::endl;
+	set_HP(100);
+	set_EP(100);
+	set_AD(30);
+}
+
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << name << " was born as a FragTrap!" << std::endl;
-	set_name(name);
 	set_HP(100);
 	set_EP(100);
 	set_AD(30);

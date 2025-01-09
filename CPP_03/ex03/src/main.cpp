@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 17:33:38 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/20 19:42:05 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/12/17 17:32:25 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,19 @@
 
 int main() {
     // Test ClapTrap
-    ClapTrap clap("Clappy");
+    ClapTrap Clap1;
+	ScavTrap Scav1;
+	FragTrap Frag1;
+		
+	std::cout << Clap1 << std::endl;
+	std::cout << Scav1 << std::endl;
+	std::cout << Frag1 << std::endl;
+	std::cout << "\n\n" << std::endl;
+
+
+
+
+	ClapTrap clap("Clappy");
     clap.attack("target1");
     clap.takeDamage(5);
     clap.beRepaired(3);
