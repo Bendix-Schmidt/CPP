@@ -6,18 +6,21 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 20:03:59 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/24 20:49:53 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/01/09 18:10:37 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "Brain.hpp"
+#include "../incl/Animal.hpp"
+#include "../incl/Dog.hpp"
+#include "../incl/Cat.hpp"
+#include "../incl/Brain.hpp"
 #include <iostream>
 
 int main(void)
 {
+	//not possible to create object of abstract class
+	//Animal	ananimal;
+	
 	//create dogs and cats
 	Animal	*animals[4];
 	for (int i = 0; i < 2; i++)

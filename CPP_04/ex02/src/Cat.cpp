@@ -6,11 +6,11 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 13:58:49 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/24 20:22:17 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/12/18 15:30:31 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "../incl/Cat.hpp"
 
 //member function
 void	Cat::makeSound() const

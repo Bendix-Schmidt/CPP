@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 18:13:16 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/25 19:29:53 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/01/09 18:52:14 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,10 @@ class Character : public ICharacter
 		void equip(AMateria* m);
 		void unequip(int idx);
 		void use(int idx, ICharacter& target);
+		void printInventory() const;
 		
 		//standard constructor
+		Character();
 		Character(std::string const & name);
 		//copy constructor
 		Character(const Character& other);

@@ -6,11 +6,11 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 17:56:22 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/24 20:41:18 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/12/18 15:30:28 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#include "../incl/Brain.hpp"
 
 //member functions:
 //getter

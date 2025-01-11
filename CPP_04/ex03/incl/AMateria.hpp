@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 15:16:09 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/25 17:06:42 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/01/09 16:53:46 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,12 @@ class AMateria
 	
 	public:
 		//constructor:
+		AMateria();
 		AMateria(std::string const &type);
-
+		//copy constructor
+		AMateria(const AMateria &other);
+		//copy assignment operator
+		AMateria &operator=(const AMateria &other);
 		//destructor
 		virtual ~AMateria();
 		

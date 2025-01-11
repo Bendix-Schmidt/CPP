@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 16:14:43 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/25 18:55:48 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/01/11 18:28:33 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include <iostream>
 
 //member functions
-AMateria*	Ice::clone() const
+Ice*	Ice::clone() const
 {
-	return new Ice(*this);
+	return (Ice*)this;
 }
 
 void		Ice::use(ICharacter &target)
@@ -25,6 +25,25 @@ void		Ice::use(ICharacter &target)
 }
 
 //constructor
-Ice::Ice() : AMateria("ice"){}
+Ice::Ice() : AMateria("ice")
+{
+}
 
-Ice::~Ice(){}
+//copy constructor
+Ice::Ice(const Ice& other) : AMateria(other)
+{
+}
+
+//copy assigment operator
+Ice& Ice::operator=(const Ice& other)
+{
+    if (this != &other)
+	{
+        AMateria::operator=(other);
+    }
+    return *this;
+}
+
+Ice::~Ice()
+{
+}

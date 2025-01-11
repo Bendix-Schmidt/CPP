@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 15:28:37 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/25 18:55:19 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/01/11 18:27:58 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,15 @@ class Cure : public AMateria
 {
 	public:
 		//member functions
-		AMateria	*clone() const;
-		void		use(ICharacter &target);
+		Cure	*clone(void) const;
+		void	use(ICharacter &target);
 
-		//constructor
+		//standard constructor
 		Cure();
+		//copy constructor
+		Cure(const Cure& other);
+		//copy assignment operator
+		Cure& operator=(const Cure& other);
 		//destructor
 		~Cure();
 };

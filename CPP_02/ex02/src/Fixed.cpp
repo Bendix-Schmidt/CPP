@@ -127,6 +127,38 @@ Fixed& Fixed::max(const Fixed &first, const Fixed &second)
         return ((Fixed&)second);
 }
 
+//Comparisons
+bool	Fixed::operator>(const Fixed &rhs) const
+{
+	return (this->fp_nb_val > rhs.fp_nb_val);
+}
+
+bool	Fixed::operator<(const Fixed &rhs) const
+{
+	return (this->fp_nb_val < rhs.fp_nb_val);
+}
+
+bool	Fixed::operator>=(const Fixed &rhs) const
+{
+	return (this->fp_nb_val >= rhs.fp_nb_val);
+}
+
+bool	Fixed::operator<=(const Fixed &rhs) const
+{
+	return (this->fp_nb_val <= rhs.fp_nb_val);
+}
+
+bool	Fixed::operator==(const Fixed &rhs) const
+{
+	return (this->fp_nb_val == rhs.fp_nb_val);
+}
+
+bool	Fixed::operator!=(const Fixed &rhs) const
+{
+	return (this->fp_nb_val != rhs.fp_nb_val);
+}
+
+
 //convert to float Function
 float	Fixed::toFloat(void) const
 {

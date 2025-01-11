@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 15:20:41 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/25 18:55:56 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/01/11 18:27:34 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,16 @@ class Ice : public AMateria
 {
 	public:
 		//member functions
-		AMateria	*clone() const;
-		void		use(ICharacter &target);
+		Ice		*clone() const;
+		void	use(ICharacter &target);
 
 		//constructor
 		Ice();
+		//copy constructor
+		Ice(const Ice& other);
+		//copy assignment operator
+		Ice& operator=(const Ice& other);
+		//destructor
 		~Ice();
 };
 

@@ -6,11 +6,11 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 13:58:49 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/22 17:00:36 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/12/18 15:12:55 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#include "../incl/WrongCat.hpp"
 
 //member function
 void	WrongCat::makeSound() const

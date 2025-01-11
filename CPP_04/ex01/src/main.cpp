@@ -6,14 +6,14 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 20:03:59 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/24 20:49:53 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/12/18 15:12:49 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "Brain.hpp"
+#include "../incl/Animal.hpp"
+#include "../incl/Dog.hpp"
+#include "../incl/Cat.hpp"
+#include "../incl/Brain.hpp"
 #include <iostream>
 
 int main(void)

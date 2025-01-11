@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:18:53 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/12/10 13:03:22 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/12/18 19:28:30 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,17 @@ class Bureaucrat
 		//classes to handle exceptions using Bureaucrat::GradeTooHighException
 		class GradeTooHigh : public std::exception
 		{
-				
+			virtual const char *what() const throw();
 		};
 		
 		class GradeTooLow : public std::exception
 		{
-			
+			virtual const char *what() const throw();
 		};
 
 		//constructors and destructors
 		//default constructor
+		Bureaucrat();
 		Bureaucrat(const std::string name);
 		//copy constructor
 		Bureaucrat(const Bureaucrat &bureaucrat);
@@ -51,6 +52,7 @@ class Bureaucrat
 		Bureaucrat &operator=(const Bureaucrat &bureaucrat);
 		//default destructor
 		~Bureaucrat();
-}
+};
 
+std::ostream	&operator<<(std::ostream &stream, Bureaucrat const &bureaucrat);		
 #endif // BUREAUCRAP_HPP

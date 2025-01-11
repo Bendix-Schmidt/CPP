@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 17:03:54 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/25 19:20:30 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/01/11 18:39:17 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,32 +49,35 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& other)
 //destructor
 MateriaSource::~MateriaSource()
 {
-    for (int i = 0; i < 4; ++i)
+	for (int i = 0; i < 4; ++i)
 	{
-        delete templates[i];
-    }
+		if (this->templates[i] != NULL)
+			delete (this->templates[i]);
+	}
 }
 
 void MateriaSource::learnMateria(AMateria* m)
 {
-    for (int i = 0; i < 4; ++i)
+	for (int i = 0; i < 4; ++i)
 	{
-        if (templates[i] == NULL)
+		if (templates[i] == NULL)
 		{
-            templates[i] = m->clone();
-            break;
-        }
-    }
+			templates[i] = m->clone();
+			break;
+		}
+		if (i == 3)
+			delete (m); 
+	}
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
-    for (int i = 0; i < 4; ++i)
+	for (int i = 0; i < 4; ++i)
 	{
-        if (templates[i] != NULL && templates[i]->get_type() == type)
+		if (templates[i] != NULL && templates[i]->get_type() == type)
 		{
-            return templates[i]->clone();
-        }
-    }
-    return NULL;
+			return templates[i]->clone();
+		}
+	}
+	return NULL;
 }

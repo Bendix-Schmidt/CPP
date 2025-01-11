@@ -6,11 +6,11 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 20:04:18 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/22 17:01:56 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/12/18 15:30:41 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongAnimal.hpp"
+#include "../incl/WrongAnimal.hpp"
 
 //member function
 void	WrongAnimal::makeSound() const

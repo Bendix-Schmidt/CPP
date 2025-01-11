@@ -6,7 +6,14 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:19:11 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/12/10 12:19:12 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/12/18 19:53:34 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "Bureaucrat.h"
+
+Bureaucrat::Bureaucrat() : name("random Bureaucrat")
+{
+	grade = 75;
+}
 

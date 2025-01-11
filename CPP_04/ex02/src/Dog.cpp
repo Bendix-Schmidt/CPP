@@ -6,11 +6,11 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 13:59:10 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/24 20:21:59 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/12/18 15:30:33 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "../incl/Dog.hpp"
 
 //member function
 void	Dog::makeSound() const

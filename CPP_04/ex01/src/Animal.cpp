@@ -6,11 +6,11 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 20:04:18 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/24 19:19:54 by bschmidt         ###   ########.fr       */
+/*   Updated: 2024/12/18 15:12:03 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "../incl/Animal.hpp"
 
 //member function
 void	Animal::makeSound() const

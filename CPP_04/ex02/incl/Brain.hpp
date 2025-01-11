@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 17:52:45 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/11/24 20:28:10 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/01/09 18:04:12 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Brain
 {
 	private:
-		std::string ideas[100];			
+		std::string ideas[100];
 
 	public:
 		//getter
