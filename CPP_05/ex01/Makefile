@@ -6,7 +6,7 @@
 #    By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/04 19:22:28 by bschmidt          #+#    #+#              #
-#    Updated: 2025/01/17 15:58:15 by bschmidt         ###   ########.fr        #
+#    Updated: 2025/01/17 18:33:03 by bschmidt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,11 +19,12 @@ OBJ_DIR = obj
 SRC_DIR = src
 
 # EXECUTABLE NAME
-NAME = bureaucrat
+NAME = forms
 
 # SOURCE FILES
 SRCS =	main.cpp \
 			Bureaucrat.cpp \
+			Form.cpp \
 
 # OBJECT FILES
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.cpp=.o))

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.h                                       :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:18:53 by bschmidt          #+#    #+#             */
-/*   Updated: 2024/12/18 19:28:30 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/01/17 16:51:36 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,20 @@ class Bureaucrat
 
 	public:
 		//member functions
-		void increment_grade();
-		void decrement_grade();
+		void incrementGrade();
+		void decrementGrade();
 		
 		//getters
-		std::string			get_name() const;
-		int					get_grade() const;
+		std::string			getName() const;
+		int					getGrade() const;
 
 		//classes to handle exceptions using Bureaucrat::GradeTooHighException
-		class GradeTooHigh : public std::exception
+		class GradeTooHighException : public std::exception
 		{
 			virtual const char *what() const throw();
 		};
 		
-		class GradeTooLow : public std::exception
+		class GradeTooLowException : public std::exception
 		{
 			virtual const char *what() const throw();
 		};
@@ -45,14 +45,14 @@ class Bureaucrat
 		//constructors and destructors
 		//default constructor
 		Bureaucrat();
-		Bureaucrat(const std::string name);
+		Bureaucrat(const std::string name, int grade);
 		//copy constructor
-		Bureaucrat(const Bureaucrat &bureaucrat);
+		Bureaucrat(const Bureaucrat &original);
 		//copy assignment operator
-		Bureaucrat &operator=(const Bureaucrat &bureaucrat);
+		Bureaucrat &operator=(const Bureaucrat &original);
 		//default destructor
 		~Bureaucrat();
 };
 
 std::ostream	&operator<<(std::ostream &stream, Bureaucrat const &bureaucrat);		
-#endif // BUREAUCRAP_HPP
+#endif // BUREAUCRAT_HPP
