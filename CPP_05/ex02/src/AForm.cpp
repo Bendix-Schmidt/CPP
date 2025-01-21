@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 17:07:19 by bschmidt          #+#    #+#             */
-/*   Updated: 2025/01/21 15:00:22 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/01/21 16:00:18 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,11 @@ void	AForm::beSigned(Bureaucrat bureaucrat)
 }
 
 //getter-functions
+std::string AForm::getTarget() const
+{
+	return (target);
+}
+
 std::string AForm::getName() const
 {
 	return (this->name);
@@ -83,8 +88,8 @@ AForm::AForm() : name("new_form"), issigned(false), sign_grade(150), exec_grade(
 {}
 
 //standard constructor
-AForm::AForm(std::string name, bool issigned, int sign_grade, int exec_grade):
-	name(name), issigned(issigned), sign_grade(sign_grade), exec_grade(exec_grade)
+AForm::AForm(std::string name, bool issigned, int sign_grade, int exec_grade, std::string target):
+	name(name), issigned(issigned), sign_grade(sign_grade), exec_grade(exec_grade), target(target)
 {
 	if (sign_grade > 150 || exec_grade > 150)
 		throw GradeTooLowException();

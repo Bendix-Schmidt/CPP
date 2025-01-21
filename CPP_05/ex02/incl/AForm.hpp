@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 16:03:26 by bschmidt          #+#    #+#             */
-/*   Updated: 2025/01/21 15:51:50 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/01/21 16:15:03 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class AForm
 		bool				issigned;
 		const	int 		sign_grade;
 		const	int 		exec_grade;
+		std::string			target;
 	
 	public:
 		//member functions/methods
@@ -35,6 +36,7 @@ class AForm
 		virtual void	getExecuted() const = 0;
 	
 		//getters
+		std::string		getTarget() const; 
 		std::string		getName() const;
 		bool			getIssigned() const;
 		int				getSignGrade() const;
@@ -61,7 +63,7 @@ class AForm
 		//default constructor
 		AForm();
 		//standard constructor
-		AForm(std::string name, bool issigned, int sign_grade, int exec_grade);
+		AForm(std::string name, bool issigned, int sign_grade, int exec_grade, std::string target);
 		//standard constructor thats sets form to unsigned by default
 		AForm(std::string name, int sign_grade, int exec_grade);
 		//copy constructor

@@ -6,20 +6,31 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 15:25:39 by bschmidt          #+#    #+#             */
-/*   Updated: 2025/01/21 15:40:30 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/01/21 16:23:34 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/RobotomyRequestForm.hpp"
+#include "AForm.hpp"
+
+//member function
+void	RobotomyRequestForm::getExecuted() const
+{
+	std::cout << "*** DRILLING NOISE ***" << std::endl;
+	if (rand() % 2)
+		std::cout << this->getTarget() << " has been robotomized!" << std::endl;
+	else
+		std::cout << "Robotomy failed :(" << std::endl;
+}
 
 //default constructor
 RobotomyRequestForm::RobotomyRequestForm() : 
-AForm("RobotomyRequestForm", false, 145, 137)
+AForm("RobotomyRequestForm", false, 72, 45, NULL)
 {}
 
 //standard constructor
 RobotomyRequestForm::RobotomyRequestForm(std::string target) :
-AForm("RobotomyRequestForm", false, 145, 137), target(target)
+AForm("RobotomyRequestForm", false, 72, 45, target)
 {}
 
 //copy constructor

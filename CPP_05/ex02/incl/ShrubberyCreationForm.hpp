@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 10:27:08 by bschmidt          #+#    #+#             */
-/*   Updated: 2025/01/21 15:35:32 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/01/21 16:00:37 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,6 @@ class ShrubberyCreationForm : public AForm
 	public:
 		//member functions
 		void	getExecuted() const;
-
-		//getter
-		std::string	getTarget() const;
 
 		//default constructor
 		ShrubberyCreationForm();

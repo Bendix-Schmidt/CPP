@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:46:52 by bschmidt          #+#    #+#             */
-/*   Updated: 2025/01/21 15:52:24 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/01/21 15:59:31 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 #include "AForm.hpp"
 
 //member functions:
-std::string	ShrubberyCreationForm::getTarget() const
-{
-	return (target);
-}
-
 void	ShrubberyCreationForm::getExecuted() const
 {
 	std::string		filename = "./" + this->getTarget() + "_scf";
@@ -50,12 +45,12 @@ void	ShrubberyCreationForm::getExecuted() const
 
 //default constructor
 ShrubberyCreationForm::ShrubberyCreationForm() : 
-AForm("ShrubberyCreationForm", false, 145, 137)
+AForm("ShrubberyCreationForm", false, 145, 137, NULL)
 {}
 
 //standard constructor
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) :
-AForm("ShrubberyCreationForm", false, 145, 137), target(target)
+AForm("ShrubberyCreationForm", false, 145, 137, target)
 {}
 
 //copy constructor

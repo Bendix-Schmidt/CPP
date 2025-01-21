@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 15:26:41 by bschmidt          #+#    #+#             */
-/*   Updated: 2025/01/21 15:41:06 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/01/21 16:16:08 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@
 #include <iostream>
 #include <exception>
 #include <fstream>
+#include <cstdlib>
 #include "AForm.hpp"
-
-
 
 class RobotomyRequestForm : public AForm
 {
@@ -26,6 +25,10 @@ class RobotomyRequestForm : public AForm
 		std::string target;
 	
 	public:
+		//member function
+		void	getExecuted() const;
+
+
 		//default constructor
 		RobotomyRequestForm();
 		//standard constructor
