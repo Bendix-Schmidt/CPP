@@ -6,11 +6,11 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:19:16 by bschmidt          #+#    #+#             */
-/*   Updated: 2025/01/17 16:55:24 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/01/21 14:45:58 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "incl/Bureaucrat.hpp"
+#include "../incl/Bureaucrat.hpp"
 
 int main() {
 	try {

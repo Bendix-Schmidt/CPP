@@ -6,11 +6,11 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:19:11 by bschmidt          #+#    #+#             */
-/*   Updated: 2025/01/17 18:30:43 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/01/21 14:54:23 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "../incl/Bureaucrat.hpp"
 
 //member functions
 void Bureaucrat::signForm(Form &form)
@@ -22,7 +22,8 @@ void Bureaucrat::signForm(Form &form)
 	}
 	catch (std::exception & e)
 	{
-		std::cout << name << " could not sign " << form.getName() << std::endl;	
+		std::cout << name << " could not sign " << form.getName() << ". Reason:" << std::endl;
+		std::cerr << e.what() << std::endl;
 	}	
 }
 
