@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:42:21 by bschmidt          #+#    #+#             */
-/*   Updated: 2025/01/21 16:14:31 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/01/22 13:42:27 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
-//#include "PresidentialPardonForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main(void)
 {
@@ -31,7 +31,7 @@ int main(void)
 		Harry.executeForm(shrubb);
 		Ron.executeForm(shrubb);
 	}
-	std::cout << "\n\n\n" << std::endl;
+	std::cout << "\n\n" << std::endl;
 	{
 		std::cout << std::endl << "--- Test Robotomy Form ---" << std::endl;
 		RobotomyRequestForm robo("robo");
@@ -44,11 +44,11 @@ int main(void)
 		Ron.signForm(robo);
 		Harry.executeForm(robo);
 		Ron.executeForm(robo);
-	} 
-
-/* 	{
+	}
+	std::cout << "\n\n" << std::endl;
+	{
 		std::cout << std::endl << "--- Test Presidential Form ---" << std::endl;
-		PresidentialPardonForm presi("presi");
+		PresidentialPardonForm presi("Some guy");
 		Bureaucrat	Harry("Harry", 150);
 		Bureaucrat	Ron("Ron", 1);
 		std::cout << presi << Harry << Ron;
@@ -58,5 +58,5 @@ int main(void)
 		Ron.signForm(presi);
 		Harry.executeForm(presi);
 		Ron.executeForm(presi);
-	} */
+	}
 }
