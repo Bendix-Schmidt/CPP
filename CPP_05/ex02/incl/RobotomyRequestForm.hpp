@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 15:26:41 by bschmidt          #+#    #+#             */
-/*   Updated: 2025/01/21 16:16:08 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/01/27 14:39:58 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <exception>
 #include <fstream>
 #include <cstdlib>
+#include <ctime> //for randomization
 #include "AForm.hpp"
 
 class RobotomyRequestForm : public AForm

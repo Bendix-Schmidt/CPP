@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 14:04:58 by bschmidt          #+#    #+#             */
-/*   Updated: 2025/01/22 14:38:27 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/01/27 14:32:32 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,23 @@
 #include "RobotomyRequestForm.hpp"
 #include "AForm.hpp"
 
-AForm *makeForm(std::string formname, std::string target)
+AForm*	Intern::makeForm(std::string formname, std::string target)
 {
 	//creating array with all formnames to loop through
 	std::string forms[] = {"ShrubberyCreationForm", "RobotomyRequestForm", "PresidentialPardonForm"};
 	int i = 0;
-
+	
 	while (i < 3)
 	{
 		if (forms[i] == formname)
 			break ;
 		else
 			i++;
+	}
+	if (i == 3)
+	{
+		std::cout << "Wanted form does not exist! Choose from ShrubberyCreationForm, RobotomyRequestForm, PresidentialPardonForm" << std::endl;
+		return NULL;
 	}
 	std::cout << forms[i] << " is about to be created!" << std::endl;
 	switch(i)

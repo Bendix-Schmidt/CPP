@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 15:25:39 by bschmidt          #+#    #+#             */
-/*   Updated: 2025/01/21 16:23:34 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/01/27 14:41:40 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 //member function
 void	RobotomyRequestForm::getExecuted() const
 {
+	std::srand(std::time(0)); //seeding random number generator with current time for different sequence
 	std::cout << "*** DRILLING NOISE ***" << std::endl;
 	if (rand() % 2)
 		std::cout << this->getTarget() << " has been robotomized!" << std::endl;

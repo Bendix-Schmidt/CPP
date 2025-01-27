@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:42:21 by bschmidt          #+#    #+#             */
-/*   Updated: 2025/01/22 14:42:28 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/01/27 15:01:45 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,58 +19,82 @@
 
 int main(void)
 {
-Bureaucrat Bob("Bob", 1);
+	Bureaucrat Bob("Bob", 1);
+	std::cout << "--- Test Robotomy Form ---" << std::endl;
+	Intern	someRandomIntern;
+	AForm	*form = NULL;
+	try
+	{
+		form = someRandomIntern.makeForm("RobotomyRequestForm", "Target");
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl << std::endl;
+	}
+	if (form)
+	{
+		std::cout << Bob << *form;
+		Bob.signForm(*form);
+		Bob.executeForm(*form);
+	}
+	delete(form);
+
+	std::cout << std::endl;
 	
+	std::cout << std::endl << "--- Test Shrubbery Form ---" << std::endl;
+	form = NULL;
+	try
 	{
-		std::cout << std::endl << "--- Test Robotomy Form ---" << std::endl;
-		Intern	someRandomIntern;
-		AForm	*form = someRandomIntern.makeForm("Robotomy Request Form", "Target");
+		form = someRandomIntern.makeForm("ShrubberyCreationForm", "Target");
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl << std::endl;
+	}
+	if (form)
+	{
 		std::cout << Bob << *form;
 		Bob.signForm(*form);
 		Bob.executeForm(*form);
-		delete(form);
 	}
+	delete(form);
 
-	{
-		std::cout << std::endl << "--- Test Shrubbery Form ---" << std::endl;
-		Intern	someRandomIntern;
-		AForm	*form = someRandomIntern.makeForm("Shrubbery Creation Form", "Target");
-		std::cout << Bob << *form;
-		Bob.signForm(*form);
-		Bob.executeForm(*form);
-		delete(form);
-	}
-
-	{
-		std::cout << std::endl << "--- Test Presidential Form ---" << std::endl;
-		Intern	someRandomIntern;
-		AForm	*form = someRandomIntern.makeForm("Presidential Pardon Form", "Target");
-		std::cout << Bob << *form;
-		Bob.signForm(*form);
-		Bob.executeForm(*form);
-		delete(form);
-	}
-
-	{
-		std::cout << std::endl << "--- Test Fail Form ---" << std::endl;
-		Intern	someRandomIntern;
-		AForm	*form = NULL;
-
-		try
-		{
-			form = someRandomIntern.makeForm("Epic Fail Form", "Target");
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << std::endl << std::endl;
-		}
-		if (form)
-		{
-			std::cout << Bob << *form;
-			Bob.signForm(*form);
-			Bob.executeForm(*form);
-		}
-		delete(form);
-	}
+	std::cout << std::endl;
 	
+	std::cout << "--- Test Presidential Form ---" << std::endl;
+	form = NULL;
+	try
+	{
+		form = someRandomIntern.makeForm("PresidentialPardonForm", "Target");
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl << std::endl;
+	}
+	if (form)
+	{
+		std::cout << Bob << *form;
+		Bob.signForm(*form);
+		Bob.executeForm(*form);
+	}
+	delete(form);
+
+	std::cout << std::endl;
+	std::cout << std::endl << "--- Test Fail Form ---" << std::endl;
+	form = NULL;
+	try
+	{
+		form = someRandomIntern.makeForm("Epic Fail Form", "Target");
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl << std::endl;
+	}
+	if (form)
+	{
+		std::cout << Bob << *form;
+		Bob.signForm(*form);
+		Bob.executeForm(*form);
+	}
+	delete(form);
 }
