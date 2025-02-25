@@ -1,28 +1,31 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   Converter.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bendixschmidt <bendixschmidt@student.42    +#+  +:+       +#+        */
+/*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 17:47:39 by bendixschmi       #+#    #+#             */
-/*   Updated: 2025/02/09 14:51:58 by bendixschmi      ###   ########.fr       */
+/*   Updated: 2025/02/20 13:35:14 by bschmidt         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #ifndef SCALARCONVERTER_HPP
 # define SCALARCONVERTER_HPP
 
+#include <string>
+#include <iostream>
+
 enum e_type
 {
-	UNDEF,
-	CHAR,
-	INT,
-	FLOAT,
-	DOUBLE,
 	NONUM,
 	POSINF,
-	NEGINF
+	NEGINF,
+	CHAR,
+	UNDEF,
+	INT,
+	FLOAT,
+	DOUBLE
 };
 
 class	ScalarConverter
@@ -41,13 +44,13 @@ class	ScalarConverter
 		static e_type getType(const::std::string &literal);
 
 		//default constructor
-		ScalarConverter()
+		ScalarConverter();
 		//copy constructor
-		ScalarConverter(const ScalarConverter &original)
+		ScalarConverter(const ScalarConverter &original);
 		//copy assignment operator
-		ScalarConverter &operator=(const ScalarConverter &original)
+		ScalarConverter &operator=(const ScalarConverter &original);
 		//destructor
-		~ScalarConverter()
+		~ScalarConverter();
 };
 
 

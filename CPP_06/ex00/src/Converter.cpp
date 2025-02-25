@@ -1,28 +1,33 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   Converter.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bendixschmidt <bendixschmidt@student.42    +#+  +:+       +#+        */
+/*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 18:12:04 by bendixschmi       #+#    #+#             */
-/*   Updated: 2025/01/20 18:17:55 by bendixschmi      ###   ########.fr       */
+/*   Updated: 2025/02/20 13:34:34 by bschmidt         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "Converter.hpp"
 
+e_type ScalarConverter::type = UNDEF;
 
-
-
-
-
-//outstream:
-std::ostream	&operator<<(std::ostream &stream, ScalarConverter const &scalarconverter)
+//member functions
+e_type ScalarConverter::getType(const std::string &literal)
 {
-	(void) scalarconverter;
-	stream << "Scalar Converter" << std::endl;
-	return (stream);
+	e_type type = UNDEF;
+	if (literal == "nan" || literal == "nanf")
+		return (NONUM);
+	else if (literal == "+inf" || literal == "+inff")
+		return (POSINF);
+	else if (literal == "-inf" || literal == "-inff")
+		return (NEGINF);
+	else if (literal.length() == 1 && isprint(literal[0]) && !isdigit(literal[0]))
+		return (CHAR);
+	else if (check_format(literal, ""))
+	return (type);
 }
 
 //constrcutors
@@ -39,7 +44,17 @@ ScalarConverter		&ScalarConverter::operator=(const ScalarConverter &origin)
 {
 	if (this != &origin)
 		return (*this);
+	//no need to set e_type. Since it is static, all instances of ScalarConverter have the same type
 	return (*this);
 }
 //destructor
-~ScalarConverter()
+ScalarConverter::~ScalarConverter()
+{}
+
+//outstream:
+std::ostream	&operator<<(std::ostream &stream, ScalarConverter const &scalarconverter)
+{
+	(void) scalarconverter;
+	stream << "Scalar Converter" << std::endl;
+	return (stream);
+}
