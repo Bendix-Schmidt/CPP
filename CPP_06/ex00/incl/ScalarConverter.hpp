@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Converter.hpp                                      :+:      :+:    :+:   */
+/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 17:47:39 by bendixschmi       #+#    #+#             */
-/*   Updated: 2025/02/25 15:42:30 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/02/25 15:57:28 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONVERTER_HPP
-# define CONVERTER_HPP
+#ifndef SCALARCONVERTER_HPP
+# define SCALARCONVERTER_HPP
 
 #include <string>
 #include <iostream>
@@ -33,7 +33,7 @@ enum e_type
 	DOUBLE
 };
 
-class	Converter
+class	ScalarConverter
 {
 	//public convert memberfunction/method to call from outside
 	public:
@@ -56,15 +56,15 @@ class	Converter
 		static e_type getType(const::std::string &literal);
 
 		//default constructor
-		Converter();
+		ScalarConverter();
 		//copy constructor
-		Converter(const Converter &original);
+		ScalarConverter(const ScalarConverter &original);
 		//copy assignment operator
-		Converter &operator=(const Converter &original);
+		ScalarConverter &operator=(const ScalarConverter &original);
 		//destructor
-		~Converter();
+		~ScalarConverter();
 };
 
-std::ostream	&operator<<(std::ostream &stream, Converter const &converter);
+std::ostream	&operator<<(std::ostream &stream, ScalarConverter const &scalarconverter);
 
 #endif // ScalarConverter_HPP

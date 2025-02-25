@@ -6,17 +6,17 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 18:12:04 by bendixschmi       #+#    #+#             */
-/*   Updated: 2025/02/25 15:53:17 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/02/25 15:59:28 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Converter.hpp"
+#include "ScalarConverter.hpp"
 
-e_type Converter::type = UNDEF;
+e_type ScalarConverter::type = UNDEF;
 
 //member functions
 
-void	Converter::convert(const std::string &literal)
+void	ScalarConverter::convert(const std::string &literal)
 {
 	type = getType(literal);
 	switch(type)
@@ -56,7 +56,7 @@ void	Converter::convert(const std::string &literal)
 	}
 }
 
-void	Converter::convertChar(const std::string literal)
+void	ScalarConverter::convertChar(const std::string literal)
 {
 	char	c = static_cast<char>(literal[0]);
 	int		i = static_cast<int>(c);
@@ -64,7 +64,7 @@ void	Converter::convertChar(const std::string literal)
 	double	d = static_cast<double>(c);
 	printConversions(c, i, f, d, literal);
 }
-void	Converter::convertInt(const std::string literal)
+void	ScalarConverter::convertInt(const std::string literal)
 {
 	int 		i = atoi(literal.c_str());
 	long long	num = atoll(literal.c_str());
@@ -79,7 +79,7 @@ void	Converter::convertInt(const std::string literal)
 		printConversions(c, i, f, d, literal);
 	}
 }
-void	Converter::convertFloat(const std::string literal)
+void	ScalarConverter::convertFloat(const std::string literal)
 {
 	float		f = strtof(literal.c_str(), NULL);
 	int			i = static_cast<int>(f);
@@ -87,7 +87,7 @@ void	Converter::convertFloat(const std::string literal)
 	double		d = static_cast<double>(f);
 	printConversions(c, i, f, d, literal);
 }
-void	Converter::convertDouble(const std::string literal)
+void	ScalarConverter::convertDouble(const std::string literal)
 {
 	double		d = strtod(literal.c_str(), NULL);
 	float		f = static_cast<float>(d);
@@ -96,7 +96,7 @@ void	Converter::convertDouble(const std::string literal)
 	printConversions(c, i, f, d, literal);
 }
 
-void	Converter::printConversions(char c, int i, float f, double d, std::string literal)
+void	ScalarConverter::printConversions(char c, int i, float f, double d, std::string literal)
 {
 	//char:
 	if ((static_cast<int>(c) == 0 && !isNullString(literal)) || static_cast<int>(d) < 0 || static_cast<int>(d) > 255)
@@ -137,7 +137,7 @@ void	Converter::printConversions(char c, int i, float f, double d, std::string l
 	}
 }
 
-bool	Converter::isNullString(const std::string str)
+bool	ScalarConverter::isNullString(const std::string str)
 {
 	if (str == "0" || str == "0.0" || str == "0.0f" || str == "-0" || str == "-0.0" || str == "-0.0f")
 		return (true);
@@ -145,7 +145,7 @@ bool	Converter::isNullString(const std::string str)
 }
 
 
-bool	Converter::checkFormat(std::string literal, const std::string pattern)
+bool	ScalarConverter::checkFormat(std::string literal, const std::string pattern)
 {
 	regex_t regex;
 	bool	match; //needed because compiled regular expression has to be freed before returning true or false
@@ -163,7 +163,7 @@ bool	Converter::checkFormat(std::string literal, const std::string pattern)
 	return (match);
 }
 
-e_type	Converter::getType(const std::string &literal)
+e_type	ScalarConverter::getType(const std::string &literal)
 {
 	e_type type = UNDEF;
 	if (literal == "nan" || literal == "nanf")
@@ -185,15 +185,15 @@ e_type	Converter::getType(const std::string &literal)
 
 //constrcutors
 //default constructor
-Converter::Converter()
+ScalarConverter::ScalarConverter()
 {}
 //copy constructor
-Converter::Converter(const Converter &original)
+ScalarConverter::ScalarConverter(const ScalarConverter &original)
 {
 	*this = original;
 }
 //copy assignment operator
-Converter		&Converter::operator=(const Converter &origin)
+ScalarConverter		&ScalarConverter::operator=(const ScalarConverter &origin)
 {
 	if (this != &origin)
 		return (*this);
@@ -201,13 +201,13 @@ Converter		&Converter::operator=(const Converter &origin)
 	return (*this);
 }
 //destructor
-Converter::~Converter()
+ScalarConverter::~ScalarConverter()
 {}
 
 //outstream:
-std::ostream	&operator<<(std::ostream &stream, Converter const &converter)
+std::ostream	&operator<<(std::ostream &stream, ScalarConverter const &scalarconverter)
 {
-	(void) converter;
-	stream << "Converter" << std::endl;
+	(void) scalarconverter;
+	stream << "ScalarConverter" << std::endl;
 	return (stream);
 }
