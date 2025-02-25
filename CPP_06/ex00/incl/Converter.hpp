@@ -6,15 +6,20 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 17:47:39 by bendixschmi       #+#    #+#             */
-/*   Updated: 2025/02/20 13:35:14 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/02/25 15:42:30 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALARCONVERTER_HPP
-# define SCALARCONVERTER_HPP
+#ifndef CONVERTER_HPP
+# define CONVERTER_HPP
 
 #include <string>
 #include <iostream>
+#include <regex.h>
+#include <limits>
+#include <climits>
+#include <cstdlib>
+#include <cmath>
 
 enum e_type
 {
@@ -28,11 +33,18 @@ enum e_type
 	DOUBLE
 };
 
-class	ScalarConverter
+class	Converter
 {
 	//public convert memberfunction/method to call from outside
 	public:
-		static void convert(const std::string &literal);
+		static	void	convert(const std::string &literal);
+		static	bool	checkFormat(std::string literal, const std::string pattern);
+		static void		convertChar(const std::string literal);
+		static void		convertInt(const std::string literal);
+		static void		convertFloat(const std::string literal);
+		static void		convertDouble(const std::string literal);
+		static bool		isNullString(const std::string literal);
+		static void		printConversions(char c, int i , float f, double d, std::string literal);
 
 	//private constrcutors to achieve that class is not instanciable by users.
 	//simply setting method to = 0 doesnt work because abstract methods cant be virtual 
@@ -44,16 +56,15 @@ class	ScalarConverter
 		static e_type getType(const::std::string &literal);
 
 		//default constructor
-		ScalarConverter();
+		Converter();
 		//copy constructor
-		ScalarConverter(const ScalarConverter &original);
+		Converter(const Converter &original);
 		//copy assignment operator
-		ScalarConverter &operator=(const ScalarConverter &original);
+		Converter &operator=(const Converter &original);
 		//destructor
-		~ScalarConverter();
+		~Converter();
 };
 
-
-std::ostream	&operator<<(std::ostream &stream, ScalarConverter const &scalarconverter);
+std::ostream	&operator<<(std::ostream &stream, Converter const &converter);
 
 #endif // ScalarConverter_HPP

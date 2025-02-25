@@ -1,14 +1,14 @@
-#******************************************************************************#
+# **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bendixschmidt <bendixschmidt@student.42    +#+  +:+       +#+         #
+#    By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/20 17:42:20 by bendixschmi       #+#    #+#              #
-#    Updated: 2025/01/20 17:46:26 by bendixschmi      ###   ########.fr        #
+#    Updated: 2025/02/25 15:46:46 by bschmidt         ###   ########.fr        #
 #                                                                              #
-#******************************************************************************#
+# **************************************************************************** #
 
 # COLORS FOR PRINTING
 GREEN = \033[0;32m
@@ -19,10 +19,11 @@ OBJ_DIR = obj
 SRC_DIR = src
 
 # EXECUTABLE NAME
-NAME = converter
+NAME = convert
 
 # SOURCE FILES
-SRCS =	Bureaucrat.cpp \
+SRCS =	main.cpp \
+			Converter.cpp \
 
 # OBJECT FILES
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.cpp=.o))
