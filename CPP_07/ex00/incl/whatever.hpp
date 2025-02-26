@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 15:29:48 by bschmidt          #+#    #+#             */
-/*   Updated: 2025/02/26 15:37:10 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/02/26 15:59:39 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 
 template <typename T>
-void swap(T a, T b)
+void swap(T &a, T &b)
 {
 	T tmp;
 	tmp = a;
@@ -25,13 +25,13 @@ void swap(T a, T b)
 }
 
 template <typename T>
-T max(T a, T b)
+T max(T &a, T &b)
 {
 	return (a > b ? a : b);
 }
 
 template <typename T>
-T min(T a, T b)
+T min(T &a, T &b)
 {
 	return (a > b ? b : a);
 }
