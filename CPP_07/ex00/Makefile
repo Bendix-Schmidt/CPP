@@ -19,11 +19,10 @@ OBJ_DIR = obj
 SRC_DIR = src
 
 # EXECUTABLE NAME
-NAME = identify
+NAME = whatever
 
 # SOURCE FILES
 SRCS =	main.cpp \
-			Functions.cpp \
 
 # OBJECT FILES
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.cpp=.o))
