@@ -6,13 +6,33 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 15:30:00 by bschmidt          #+#    #+#             */
-/*   Updated: 2025/02/26 16:01:03 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/02/26 16:03:22 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/whatever.hpp"
 
-int main(void)
+int main( void )
+{
+	int a = 2;
+	int b = 3;
+	::swap( a, b );
+	std::cout << "a = " << a << ", b = " << b << std::endl;
+	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+	std::string c = "chaine1";
+	std::string d = "chaine2";
+	::swap(c, d);
+	std::cout << "c = " << c << ", d = " << d << std::endl;
+	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+	return 0;
+}
+
+
+
+//MY OWN TESTING BELOW done before I realized there is a test given :/
+/* int main(void)
 {
 	int x = 5;
 	int y = 10;
@@ -41,5 +61,4 @@ int main(void)
 	std::cout << "min of str1(first) and str3(aa): " << min(str1, str3) << std::endl;
 	std::cout << "max of str1(first) and str2(second): " << max(str1, str2) << std::endl;
 	std::cout << "max of str1(first) and str3(aa): " << max(str1, str3) << std::endl;
-
-}
+} */
