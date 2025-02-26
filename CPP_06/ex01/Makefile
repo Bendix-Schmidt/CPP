@@ -6,7 +6,7 @@
 #    By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/20 17:42:20 by bendixschmi       #+#    #+#              #
-#    Updated: 2025/02/25 16:02:14 by bschmidt         ###   ########.fr        #
+#    Updated: 2025/02/26 13:22:34 by bschmidt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ NAME = serializer
 
 # SOURCE FILES
 SRCS =	main.cpp \
-			Converter.cpp \
+			Serializer.cpp \
 
 # OBJECT FILES
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.cpp=.o))

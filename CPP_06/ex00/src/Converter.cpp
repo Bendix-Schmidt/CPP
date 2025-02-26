@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 18:12:04 by bendixschmi       #+#    #+#             */
-/*   Updated: 2025/02/25 15:59:28 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/02/26 13:20:03 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -187,24 +187,13 @@ e_type	ScalarConverter::getType(const std::string &literal)
 //default constructor
 ScalarConverter::ScalarConverter()
 {}
-//copy constructor
-ScalarConverter::ScalarConverter(const ScalarConverter &original)
-{
-	*this = original;
-}
-//copy assignment operator
-ScalarConverter		&ScalarConverter::operator=(const ScalarConverter &origin)
-{
-	if (this != &origin)
-		return (*this);
-	//no need to set e_type. Since it is static, all instances of ScalarConverter have the same type
-	return (*this);
-}
+//copy constructor and copy assignment operator not defined (implemented to assure that class can not be instantiated)
+
 //destructor
 ScalarConverter::~ScalarConverter()
 {}
 
-//outstream:
+//outstream (kinda useless):
 std::ostream	&operator<<(std::ostream &stream, ScalarConverter const &scalarconverter)
 {
 	(void) scalarconverter;
