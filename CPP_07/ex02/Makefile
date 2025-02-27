@@ -6,7 +6,7 @@
 #    By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/20 17:42:20 by bendixschmi       #+#    #+#              #
-#    Updated: 2025/02/26 16:16:54 by bschmidt         ###   ########.fr        #
+#    Updated: 2025/02/27 15:03:12 by bschmidt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ OBJ_DIR = obj
 SRC_DIR = src
 
 # EXECUTABLE NAME
-NAME = Iter
+NAME = templating
 
 # SOURCE FILES
 SRCS =	main.cpp \

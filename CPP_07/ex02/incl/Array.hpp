@@ -6,13 +6,12 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 13:46:37 by bschmidt          #+#    #+#             */
-/*   Updated: 2025/02/27 13:46:40 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/02/27 15:02:48 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ARRAY_HPP
 # define ARRAY_HPP
-
 
 #include <iostream>
 #include <exception>
@@ -22,7 +21,7 @@ class Array
 {
 	private:
 	T	*array;
-	int	size;
+	int	length;
 	
 	public:
 	//methods
@@ -33,7 +32,10 @@ class Array
 	{
 		public:
 		virtual const char *what() const throw()
-	}
+		{
+			return ("Error: index is out of bounds");
+		}
+	};
 
 	//overload
 	T	&operator[](const int n);
@@ -44,9 +46,9 @@ class Array
 	Array(const Array &array);
 	Array &operator=(const Array &array);
 	~Array();
-
-	#include "Array.tpp"
 };
+
+#include "Array.tpp"
 
 #endif // ARRAY_HPP
 
