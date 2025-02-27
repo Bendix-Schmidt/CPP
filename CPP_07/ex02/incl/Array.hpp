@@ -5,17 +5,48 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/26 16:22:07 by bschmidt          #+#    #+#             */
-/*   Updated: 2025/02/26 16:26:15 by bschmidt         ###   ########.fr       */
+/*   Created: 2025/02/27 13:46:37 by bschmidt          #+#    #+#             */
+/*   Updated: 2025/02/27 13:46:40 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ARRAY_HPP
-# define ARRAY_HP
+# define ARRAY_HPP
+
 
 #include <iostream>
 #include <exception>
 
-template 
+template <typename T>
+class Array
+{
+	private:
+	T	*array;
+	int	size;
+	
+	public:
+	//methods
+	int size();
 
-#endif // ARRAP_HP
+	//exceptions
+	class IndexOutOfBounds : public std::exception
+	{
+		public:
+		virtual const char *what() const throw()
+	}
+
+	//overload
+	T	&operator[](const int n);
+	
+	//Constructor:
+	Array();
+	Array(unsigned int n);
+	Array(const Array &array);
+	Array &operator=(const Array &array);
+	~Array();
+
+	#include "Array.tpp"
+};
+
+#endif // ARRAY_HPP
+
