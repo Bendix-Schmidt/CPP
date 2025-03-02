@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #ifndef ROBOTOMYREQUESTFORM_HPP
-# define ROBOTOMYREQUESTCLASS_HPP
+# define ROBOTOMYREQUESTFORM_HPP
 
 #include <iostream>
 #include <exception>

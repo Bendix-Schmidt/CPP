@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 18:12:04 by bendixschmi       #+#    #+#             */
-/*   Updated: 2025/02/26 13:20:03 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/03/02 13:12:01 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,12 +148,12 @@ bool	ScalarConverter::isNullString(const std::string str)
 bool	ScalarConverter::checkFormat(std::string literal, const std::string pattern)
 {
 	regex_t regex;
-	bool	match; //needed because compiled regular expression has to be freed before returning true or false
+	bool	match = false; //needed because compiled regular expression has to be freed before returning true or false
 	
 	if (regcomp(&regex, pattern.c_str(), REG_EXTENDED) != 0)
 	{
 		std::cerr << "Regex compilation failed" << std::endl;
-		return (false);
+		return (match);
 	}
 	
 	if (regexec(&regex, literal.c_str(), 0, NULL, 0) == 0)
