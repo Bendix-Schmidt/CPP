@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 14:04:58 by bschmidt          #+#    #+#             */
-/*   Updated: 2025/01/27 14:32:32 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/03/04 17:59:38 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ AForm*	Intern::makeForm(std::string formname, std::string target)
 	}
 	if (i == 3)
 	{
-		std::cout << "Wanted form does not exist! Choose from ShrubberyCreationForm, RobotomyRequestForm, PresidentialPardonForm" << std::endl;
+		throw Intern::FormCreationError();
 		return NULL;
 	}
 	std::cout << forms[i] << " is about to be created!" << std::endl;
