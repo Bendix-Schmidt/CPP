@@ -28,7 +28,7 @@ int main()
 
 		// Test signing forms
 		john.signForm(form1);  // Should succeed
-		jane.signForm(form1);  // Should fail with GradeTooLowException
+		jane.signForm(form2);  // Should fail with GradeTooLowException
 
 		// Check the status of the forms
 		std::cout << form1 << std::endl;

@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 13:39:33 by bschmidt          #+#    #+#             */
-/*   Updated: 2025/02/26 14:19:22 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/03/04 18:46:25 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,31 @@ void	identify(Base *p)
 		std::cout << "class could not be identified" << std::endl;	
 }
 
-void	identify(Base &p)
+void	identify(Base& p)
 {
-	if (dynamic_cast<A*>(&p))
+	try
+	{
+		(void)dynamic_cast<A&>(p);
 		std::cout << "& = class A" << std::endl;
-	else if (dynamic_cast<B*>(&p))
-		std::cout << "& = class B" << std::endl;
-	else if (dynamic_cast<C*>(&p))
-		std::cout << "& = Class C" << std::endl;
-	else
-		std::cout << "class could not be identified" << std::endl;
+	}
+	catch (const std::exception& e)
+	{
+		try
+		{
+			(void)dynamic_cast<B&>(p);
+			std::cout << "& = class B" << std::endl;
+		}
+		catch(const std::exception& e)
+		{
+			try
+			{
+				(void)dynamic_cast<C&>(p);
+				std::cout << "& = class C" << std::endl;
+			}
+			catch(const std::exception& e)
+			{
+				std::cout << "class could not be identified" << std::endl;
+			}
+		}
+	}
 }
