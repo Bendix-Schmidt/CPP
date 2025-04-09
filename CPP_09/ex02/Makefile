@@ -6,7 +6,7 @@
 #    By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/20 17:42:20 by bendixschmi       #+#    #+#              #
-#    Updated: 2025/03/02 15:10:17 by bschmidt         ###   ########.fr        #
+#    Updated: 2025/04/09 16:42:07 by bschmidt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ OBJ_DIR = obj
 SRC_DIR = src
 
 # EXECUTABLE NAME
-NAME = mutated
+NAME = PmergeMe
 
 # SOURCE FILES
 SRCS =	main.cpp \
