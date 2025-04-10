@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/01/20 17:42:20 by bendixschmi       #+#    #+#              #
-#    Updated: 2025/04/09 16:42:07 by bschmidt         ###   ########.fr        #
+#    Created: 2025/04/10 19:12:44 by bschmidt          #+#    #+#              #
+#    Updated: 2025/04/10 19:12:48 by bschmidt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ NAME = PmergeMe
 
 # SOURCE FILES
 SRCS =	main.cpp \
-
+			PmergeMe.cpp \
 # OBJECT FILES
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.cpp=.o))
 
