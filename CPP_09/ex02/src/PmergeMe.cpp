@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 19:12:57 by bschmidt          #+#    #+#             */
-/*   Updated: 2025/04/11 16:58:56 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/04/11 17:31:15 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@ int PmergeMe::jtNumber(int n)
 	if (n == 0) return 0;
 	if (n == 1) return 1;
 	
-	int j_n_minus_1 = 1;
-	int j_n_minus_2 = 0;
+	int j_n_minus1 = 1;
+	int j_n_minus2 = 0;
 	int j_n = 0;
 	
 	for (int i = 2; i <= n; i++)
 	{
-		j_n = j_n_minus_1 + 2 * j_n_minus_2;
-		j_n_minus_2 = j_n_minus_1;
-		j_n_minus_1 = j_n;
+		j_n = j_n_minus1 + 2 * j_n_minus2;
+		j_n_minus2 = j_n_minus1;
+		j_n_minus1 = j_n;
 	}
 	
 	return (j_n);
@@ -37,50 +37,56 @@ std::vector<int> PmergeMe::getJtInsertionOrder(int n)
 	if (n <= 0)
 		return (result);
 	
-	// Berechne alle benötigten Jacobsthal-Zahlen
+	//get necessry Jt-numbers
 	std::vector<int> jacobsthalNumbers;
 	jacobsthalNumbers.push_back(0);  // J(0) = 0
 	jacobsthalNumbers.push_back(1);  // J(1) = 1
 	
 	int i = 2;
-	while (jacobsthalNumbers.back() < n) {
+	while (jacobsthalNumbers.back() < n)
+	{
 		int next = jacobsthalNumbers[i-1] + 2 * jacobsthalNumbers[i-2];
 		jacobsthalNumbers.push_back(next);
 		i++;
 	}
 	
-	// Erstelle die Einfügereihenfolge
-	std::vector<bool> used(n + 1, false);
+	std::vector<bool> used(n + 1, false); //initialize vector to hold boolean values (n + 1, set to false by default)
 	
-	// Füge zuerst 1 ein (immer der erste)
+	//insert first element always
 	result.push_back(1);
 	used[1] = true;
 	
-	// Füge dann die restlichen Elemente gemäß der Jacobsthal-Reihenfolge ein
-	for (size_t j = 3; j < jacobsthalNumbers.size(); j++) {
-		// Füge die Jacobsthal-Position ein
+	//insert rest based on jt sequnce
+	for (size_t j = 3; j < jacobsthalNumbers.size(); j++)
+	{
+		//insert jt number
 		int pos = jacobsthalNumbers[j];
-		if (pos <= n && !used[pos]) {
+		if (pos <= n && !used[pos])
+		{
 			result.push_back(pos);
 			used[pos] = true;
 		}
 		
-		// Füge alle Positionen zwischen der aktuellen und vorherigen Jacobsthal-Zahl ein
-		for (int k = pos - 1; k > jacobsthalNumbers[j-1]; k--) {
-			if (k <= n && !used[k]) {
+		//insert all elements between this and last jacobsthal number
+		for (int k = pos - 1; k > jacobsthalNumbers[j-1]; k--)
+		{
+			if (k <= n && !used[k])
+			{
 				result.push_back(k);
 				used[k] = true;
 			}
 		}
 	}
 	
-	// Füge alle verbleibenden Positionen ein
-	for (int j = 1; j <= n; j++) {
-		if (!used[j]) {
+	//insert rest of elemnts
+	for (int j = 1; j <= n; j++)
+	{
+		if (!used[j])
+		{
 			result.push_back(j);
 		}
 	}
-	return result;
+	return (result);
 }
 
 void PmergeMe::mergeInsertVector(std::vector<int>& vec)
@@ -111,7 +117,7 @@ void PmergeMe::mergeInsertVector(std::vector<int>& vec)
 	// sort vector with bigger elements
 	std::vector<int> sorted;
 	for (std::vector<std::pair<int, int> >::iterator it = pairs.begin(); 
-		 it != pairs.end(); ++it)
+		it != pairs.end(); ++it)
 	{
 		sorted.push_back(it->second);
 	}
@@ -127,13 +133,12 @@ void PmergeMe::mergeInsertVector(std::vector<int>& vec)
 		smallerElements.push_back(it->first);
 	}
 	
-	// Generate the Jacobsthal insertion order
 	std::vector<int> insertionOrder = getJtInsertionOrder(smallerElements.size());
 
 	// Insert the smaller elements according to the Jacobsthal sequence
 	for (size_t i = 0; i < insertionOrder.size(); i++)
 	{
-		int index = insertionOrder[i] - 1; // -1 because indices start at 0
+		int index = insertionOrder[i] - 1;
 		if (index < static_cast<int>(smallerElements.size()))
 		{
 			int valueToInsert = smallerElements[index];
@@ -198,7 +203,6 @@ void PmergeMe::mergeInsertDeque(std::deque<int>& dq)
 		smallerElements.push_back(it->first);
 	}
 	
-	// Generate the Jacobsthal insertion order
 	std::vector<int> insertionOrder = getJtInsertionOrder(smallerElements.size());
 	
 	// Insert the smaller elements according to the Jacobsthal sequence

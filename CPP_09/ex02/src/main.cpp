@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 19:13:03 by bschmidt          #+#    #+#             */
-/*   Updated: 2025/04/11 16:40:02 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/04/11 17:38:17 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,10 +105,10 @@ int main(int argc, char **argv)
 	else
 		std::cout << "\033[1;31mNot sorted properly\033[0m" << std::endl;
 	std::cout 	<< "Time to process a range of " << argc - 1
-				<< "elements using vectors: " << pm.getVecTime()
+				<< " elements using vectors: " << pm.getVecTime()
 				<< " us" << std::endl;
 	std::cout 	<< "Time to process a range of " << argc - 1
-				<< "elements using deque: " << pm.getDequeTime() 
+				<< " elements using deque: " << pm.getDequeTime() 
 				<< " us" << std::endl;
 	return (0);
 }
