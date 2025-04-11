@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 19:13:10 by bschmidt          #+#    #+#             */
-/*   Updated: 2025/04/10 19:13:12 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/04/11 16:54:08 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,18 @@ class PmergeMe
 	private:
 		std::vector<int> vec;
 		std::deque<int> deque;
-		double _vectorTime;
-		double _dequeTime;
+		double vectorTime;
+		double dequeTime;
 	
 	public:
+		//methods
 		void sort();
-		void displayBefore() const;
-		void displayAfter() const;
+		void seqAfterSort();
+		bool is_sorted();
+
+		//getters
+		double getVecTime();
+		double getDequeTime();
 
 		//constructors && destructor
 		PmergeMe();
@@ -46,11 +51,8 @@ class PmergeMe
 		~PmergeMe();
 		
 	private:
-		void sortVector();
-		void sortDeque();
 		void mergeInsertVector(std::vector<int>& vec);
 		void mergeInsertDeque(std::deque<int>& dq);
-		bool isPositiveNumber(const std::string& str) const;
 		int jacobsthalNumber(int n) const;
 		std::vector<int> generateJacobsthalInsertionOrder(int n) const;
 };

@@ -6,71 +6,11 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 19:12:57 by bschmidt          #+#    #+#             */
-/*   Updated: 2025/04/10 19:12:59 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/04/11 16:54:02 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/PmergeMe.hpp"
-
-
-PmergeMe::PmergeMe() {}
-
-PmergeMe::PmergeMe(int argc, char **argv)
-{
-    vec.reserve(argc - 1); //preallocate memory to stop my vector from being moved around a lot :)
-    for (int i = 1; i < argc; i++)
-    {
-        vec.push_back(atoi(argv[i]));
-		deque.push_back(atoi(argv[i]));
-    }
-}
-
-PmergeMe::~PmergeMe() {}
-
-PmergeMe::PmergeMe(const PmergeMe& oth) : vec(oth.vec), deque(oth.deque) {}
-
-PmergeMe& PmergeMe::operator=(const PmergeMe& oth)
-{
-	if (this != &oth)
-	{
-		vec = oth.vec;
-		deque = oth.deque;
-	}
-	return *this;
-}
-
-void PmergeMe::displayBefore() const
-{
-	std::cout << "Before: ";
-	for (std::vector<int>::const_iterator it = vec.begin(); it != vec.end(); ++it)
-	{
-		std::cout << *it << " ";
-	}
-	std::cout << std::endl;
-}
-
-void PmergeMe::displayAfter() const
-{
-	std::cout << "After: ";
-	for (std::vector<int>::const_iterator it = vec.begin(); it != vec.end(); ++it)
-	{
-		std::cout << *it << " ";
-	}
-	std::cout << std::endl;
-}
-
-// Main sorting functions
-void PmergeMe::sortVector()
-{
-	if (vec.size() <= 1)
-		return;
-	mergeInsertVector(vec);
-}
-
-void PmergeMe::sortDeque()
-{
-	mergeInsertDeque(deque);
-}
 
 // Helper function to calculate Jacobsthal numbers
 int PmergeMe::jacobsthalNumber(int n) const
@@ -305,27 +245,61 @@ void PmergeMe::mergeInsertDeque(std::deque<int>& dq)
 		
 		sorted.insert(sorted.begin() + left, single);
 	}
-	
+
 	dq = sorted;
 }
 
 void PmergeMe::sort()
 {
 	clock_t startVector = clock();
-	sortVector();
+	mergeInsertVector(vec);
 	clock_t endVector = clock();
-	_vectorTime = static_cast<double>(endVector - startVector) / CLOCKS_PER_SEC * 1000000;
+	vectorTime = static_cast<double>(endVector - startVector) / CLOCKS_PER_SEC * 1000000;
 
 	clock_t startDeque = clock();
-	sortDeque();
+	mergeInsertDeque(deque);
 	clock_t endDeque = clock();
-	_dequeTime = static_cast<double>(endDeque - startDeque) / CLOCKS_PER_SEC * 1000000;
+	dequeTime = static_cast<double>(endDeque - startDeque) / CLOCKS_PER_SEC * 1000000;
+}
 
-	std::cout << "Time to process a range of " << vec.size() 
-			  << " elements with std::vector : " << std::fixed 
-			  << std::setprecision(5) << _vectorTime << " us" << std::endl;
-	
-	std::cout << "Time to process a range of " << deque.size() 
-			  << " elements with std::deque : " << std::fixed 
-			  << std::setprecision(5) << _dequeTime << " us" << std::endl;
-} 
+
+
+//getters
+double	PmergeMe::getDequeTime()
+{
+	return (dequeTime);
+}
+
+double	PmergeMe::getVecTime()
+{
+	return (vectorTime);
+}
+
+//Constructors, copy assignment operator & Destructor
+PmergeMe::PmergeMe() {}
+
+PmergeMe::PmergeMe(int argc, char **argv)
+{
+	vec.reserve(argc - 1); //preallocate memory to stop my vector from being moved around a lot :)
+	for (int i = 1; i < argc; i++)
+	{
+		vec.push_back(atoi(argv[i]));
+		deque.push_back(atoi(argv[i]));
+	}
+}
+
+PmergeMe::PmergeMe(const PmergeMe& oth) : vec(oth.vec), deque(oth.deque)
+{}
+
+PmergeMe& PmergeMe::operator=(const PmergeMe& oth)
+{
+	if (this != &oth)
+	{
+		vec = oth.vec;
+		deque = oth.deque;
+	}
+	return *this;
+}
+
+PmergeMe::~PmergeMe()
+{}
