@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 19:13:10 by bschmidt          #+#    #+#             */
-/*   Updated: 2025/04/11 16:54:08 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/04/11 16:58:26 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ class PmergeMe
 	private:
 		void mergeInsertVector(std::vector<int>& vec);
 		void mergeInsertDeque(std::deque<int>& dq);
-		int jacobsthalNumber(int n) const;
-		std::vector<int> generateJacobsthalInsertionOrder(int n) const;
+		int jtNumber(int n);
+		std::vector<int> getJtInsertionOrder(int n);
 };
 
 #endif // PmergeMe_HPP

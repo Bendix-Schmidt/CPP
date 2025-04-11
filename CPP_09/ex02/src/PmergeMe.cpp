@@ -6,14 +6,13 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 19:12:57 by bschmidt          #+#    #+#             */
-/*   Updated: 2025/04/11 16:54:02 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/04/11 16:58:56 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/PmergeMe.hpp"
 
-// Helper function to calculate Jacobsthal numbers
-int PmergeMe::jacobsthalNumber(int n) const
+int PmergeMe::jtNumber(int n)
 {
 	if (n == 0) return 0;
 	if (n == 1) return 1;
@@ -29,14 +28,14 @@ int PmergeMe::jacobsthalNumber(int n) const
 		j_n_minus_1 = j_n;
 	}
 	
-	return j_n;
+	return (j_n);
 }
 
-// Generates the Jacobsthal insertion order for n elements
-std::vector<int> PmergeMe::generateJacobsthalInsertionOrder(int n) const
+std::vector<int> PmergeMe::getJtInsertionOrder(int n)
 {
 	std::vector<int> result;
-	if (n <= 0) return result;
+	if (n <= 0)
+		return (result);
 	
 	// Berechne alle benötigten Jacobsthal-Zahlen
 	std::vector<int> jacobsthalNumbers;
@@ -129,7 +128,7 @@ void PmergeMe::mergeInsertVector(std::vector<int>& vec)
 	}
 	
 	// Generate the Jacobsthal insertion order
-	std::vector<int> insertionOrder = generateJacobsthalInsertionOrder(smallerElements.size());
+	std::vector<int> insertionOrder = getJtInsertionOrder(smallerElements.size());
 
 	// Insert the smaller elements according to the Jacobsthal sequence
 	for (size_t i = 0; i < insertionOrder.size(); i++)
@@ -200,7 +199,7 @@ void PmergeMe::mergeInsertDeque(std::deque<int>& dq)
 	}
 	
 	// Generate the Jacobsthal insertion order
-	std::vector<int> insertionOrder = generateJacobsthalInsertionOrder(smallerElements.size());
+	std::vector<int> insertionOrder = getJtInsertionOrder(smallerElements.size());
 	
 	// Insert the smaller elements according to the Jacobsthal sequence
 	for (size_t i = 0; i < insertionOrder.size(); i++)
