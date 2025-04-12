@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 19:12:57 by bschmidt          #+#    #+#             */
-/*   Updated: 2025/04/11 17:31:15 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/04/11 18:07:55 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int PmergeMe::jtNumber(int n)
 	return (j_n);
 }
 
-std::vector<int> PmergeMe::getJtInsertionOrder(int n)
+std::vector<int> getJtInsertionOrder(int n)
 {
 	std::vector<int> result;
 	if (n <= 0)
@@ -89,183 +89,40 @@ std::vector<int> PmergeMe::getJtInsertionOrder(int n)
 	return (result);
 }
 
-void PmergeMe::mergeInsertVector(std::vector<int>& vec)
+template <typename Container>
+typename Container::iterator binarySearchPosition(Container& container, int value)
 {
-	if (vec.size() <= 1)
-		return;
-
-	// build pairs
-	std::vector<std::pair<int, int> > pairs;
-	int single = -1;
-	size_t i = 0;
-	
-	while (i < vec.size())
-	{
-		int first = vec[i++];
-		if (i < vec.size())
-		{
-			int second = vec[i++];
-			if (first > second)
-				pairs.push_back(std::make_pair(second, first));
-			else
-				pairs.push_back(std::make_pair(first, second));
-		}
-		else
-			single = first;
-	}
-
-	// sort vector with bigger elements
-	std::vector<int> sorted;
-	for (std::vector<std::pair<int, int> >::iterator it = pairs.begin(); 
-		it != pairs.end(); ++it)
-	{
-		sorted.push_back(it->second);
-	}
-
-	if (sorted.size() > 1)
-		mergeInsertVector(sorted);
-
-	// Store the smaller elements in a vector for easier access
-	std::vector<int> smallerElements;
-	for (std::vector<std::pair<int, int> >::iterator it = pairs.begin(); 
-		 it != pairs.end(); ++it)
-	{
-		smallerElements.push_back(it->first);
-	}
-	
-	std::vector<int> insertionOrder = getJtInsertionOrder(smallerElements.size());
-
-	// Insert the smaller elements according to the Jacobsthal sequence
-	for (size_t i = 0; i < insertionOrder.size(); i++)
-	{
-		int index = insertionOrder[i] - 1;
-		if (index < static_cast<int>(smallerElements.size()))
-		{
-			int valueToInsert = smallerElements[index];
-			
-			// For vector we can use binary search
-			std::vector<int>::iterator pos = std::lower_bound(sorted.begin(), sorted.end(), valueToInsert);
-			sorted.insert(pos, valueToInsert);
-		}
-	}
-
-	// push single element
-	if (single != -1)
-	{
-		// Binary search for the single element
-		std::vector<int>::iterator pos = std::lower_bound(sorted.begin(), sorted.end(), single);
-		sorted.insert(pos, single);
-	}
-	vec = sorted;
+    return std::lower_bound(container.begin(), container.end(), value);
 }
 
-void PmergeMe::mergeInsertDeque(std::deque<int>& dq)
+template <>
+std::deque<int>::iterator binarySearchPosition(std::deque<int>& container, int value)
 {
-	if (dq.size() <= 1)
-		return;
-
-	// build pairs
-	std::deque<std::pair<int, int> > pairs;
-	int single = -1;
-	std::deque<int>::iterator it = dq.begin();
-	
-	while (it != dq.end())
-	{
-		int first = *it++;
-		if (it != dq.end())
-		{
-			int second = *it++;
-			if (first > second)
-				pairs.push_back(std::make_pair(second, first));
-			else
-				pairs.push_back(std::make_pair(first, second));
-		}
-		else
-			single = first;
-	}
-
-	// sort deque with bigger elements
-	std::deque<int> sorted;
-	for (std::deque<std::pair<int, int> >::iterator it = pairs.begin(); 
-		 it != pairs.end(); ++it)
-	{
-		sorted.push_back(it->second);
-	}
-
-	if (sorted.size() > 1)
-		mergeInsertDeque(sorted);
-
-	// Store the smaller elements in a vector for easier access
-	std::vector<int> smallerElements;
-	for (std::deque<std::pair<int, int> >::iterator it = pairs.begin(); 
-		 it != pairs.end(); ++it)
-	{
-		smallerElements.push_back(it->first);
-	}
-	
-	std::vector<int> insertionOrder = getJtInsertionOrder(smallerElements.size());
-	
-	// Insert the smaller elements according to the Jacobsthal sequence
-	for (size_t i = 0; i < insertionOrder.size(); i++)
-	{
-		int index = insertionOrder[i] - 1; // -1 because indices start at 0
-		if (index < static_cast<int>(smallerElements.size()))
-		{
-			int valueToInsert = smallerElements[index];
-			
-			// For deque we can use binary search
-			size_t left = 0;
-			size_t right = sorted.size();
-			
-			while (left < right)
-			{
-				size_t mid = left + (right - left) / 2;
-				if (sorted[mid] < valueToInsert)
-					left = mid + 1;
-				else
-					right = mid;
-			}
-			
-			sorted.insert(sorted.begin() + left, valueToInsert);
-		}
-	}
-
-	// push single element
-	if (single != -1)
-	{
-		// Binary search for the single element
-		size_t left = 0;
-		size_t right = sorted.size();
-		
-		while (left < right)
-		{
-			size_t mid = left + (right - left) / 2;
-			if (sorted[mid] < single)
-				left = mid + 1;
-			else
-				right = mid;
-		}
-		
-		sorted.insert(sorted.begin() + left, single);
-	}
-
-	dq = sorted;
+    size_t left = 0;
+    size_t right = container.size();
+    while (left < right)
+    {
+        size_t mid = left + (right - left) / 2;
+        if (container[mid] < value)
+            left = mid + 1;
+        else
+            right = mid;
+    }
+    return container.begin() + left;
 }
 
 void PmergeMe::sort()
 {
 	clock_t startVector = clock();
-	mergeInsertVector(vec);
+	mergeInsert(vec, getJtInsertionOrder);
 	clock_t endVector = clock();
 	vectorTime = static_cast<double>(endVector - startVector) / CLOCKS_PER_SEC * 1000000;
 
 	clock_t startDeque = clock();
-	mergeInsertDeque(deque);
+	mergeInsert(deque, getJtInsertionOrder);
 	clock_t endDeque = clock();
 	dequeTime = static_cast<double>(endDeque - startDeque) / CLOCKS_PER_SEC * 1000000;
 }
-
-
 
 //getters
 double	PmergeMe::getDequeTime()

@@ -6,7 +6,7 @@
 /*   By: bschmidt <bschmidt@student.42.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 15:15:20 by bschmidt          #+#    #+#             */
-/*   Updated: 2025/04/08 17:56:47 by bschmidt         ###   ########.fr       */
+/*   Updated: 2025/04/11 18:44:35 by bschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,6 @@ void BitcoinExchange::readInputFile(const std::string &infile)
 		if (std::getline(iss, date, '|') && std::getline(iss, valueStr))
 		{
 			date = date.substr(0, date.find_last_not_of(" \t") + 1);
-			if (isValidDate(date) == false)
-			{
-				throw (std::runtime_error("Error: invalid Date => " + line));
-			}
 			valueStr = valueStr.substr(valueStr.find_first_not_of(" \t"));
 			try
 			{
@@ -99,6 +95,11 @@ float BitcoinExchange::getExchangeRate(const std::string &date) const
 {
 	std::map<std::string, float>::const_iterator iter = database.upper_bound(date);
 	
+	if (isValidDate(date) == false)
+	{
+		throw (std::runtime_error("Error: invalid Date => " + date));
+	}
+
 	if (iter == database.begin())
 		throw std::runtime_error("Error: No earlier Date available"); //throw error to not look into the future
 	
